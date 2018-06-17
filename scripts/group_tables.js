@@ -84,16 +84,4 @@ allGroups.forEach((group, index) => {
     </div>`;
 
     groupElements[index].insertAdjacentHTML('beforeend', table);
-})
-
-// let data = teams.groups[0];
-// data.sort((a, b) => a.pos - b.pos);
-
-// let first = data[0];
-// let second = data[1];
-// let third = data[2];
-// let fourth = data[3];
-
-// groupElements[0].insertAdjacentHTML('beforeend', table);
-
-// module.exports.data = data;
+});
