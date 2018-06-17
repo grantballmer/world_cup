@@ -1,0 +1,11 @@
+{
+  "name": "world_cup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "watch": "watchify app.js -o bundle.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
