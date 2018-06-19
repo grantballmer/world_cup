@@ -255,11 +255,23 @@ nav {
     .info .score__row * {
       max-width: 20%; }
   .info__details {
-    max-height: 40%;
+    height: 42%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center; }
+    .info__details--video {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .info__details--video img, .info__details--video a {
+        height: 100%;
+        cursor: pointer; }
+    .info__details--scorers {
+      height: 100%;
+      width: 50%; }
 
 .country__image {
   height: 48%;

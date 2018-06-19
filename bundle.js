@@ -15,7 +15,7 @@ const infoBoxes = require('./scripts/info_box');
 //         console.log(match);
 //     }
 // }))
-},{"./scripts/country_data":3,"./scripts/group_tables":4,"./scripts/info_box":5,"./scripts/matches":6}],2:[function(require,module,exports){
+},{"./scripts/country_data":3,"./scripts/group_tables":5,"./scripts/info_box":6,"./scripts/matches":7}],2:[function(require,module,exports){
 //! moment.js
 
 ;(function (global, factory) {
@@ -4528,7 +4528,7 @@ const matchData = require('./matches');
 
 const matches = matchData.matches;
 
-function Team(name, mp, w, d, l, gf, ga, gd, pts, imageSm, imageLg) {
+function Team(name, mp, w, d, l, gf, ga, gd, pts, imageSm, imageLg, scorers) {
     this.name = name;
     this.mp = mp;
     this.wins = w;
@@ -4539,76 +4539,88 @@ function Team(name, mp, w, d, l, gf, ga, gd, pts, imageSm, imageLg) {
     this.gd = gd;
     this.pts = pts;
     this.images = [imageSm, imageLg];
+    this.scorers = scorers;
 }
 
 //group a
-let russia = new Team('Russia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/russia.png', '../assets/large/russia.svg');
-let saudiArabia = new Team('Saudi Arabia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/saudi-arabia.png', '../assets/large/saudi-arabia.svg');
-let egypt = new Team('Egypt', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/egypt.png', '../assets/large/egypt.svg');
-let uruguay = new Team('Uruguay', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/uruguay.png', '../assets/large/uruguay.svg');
+let russia = new Team('Russia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/russia.png', '../assets/large/russia.svg', {});
+let saudiArabia = new Team('Saudi Arabia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/saudi-arabia.png', '../assets/large/saudi-arabia.svg', {});
+let egypt = new Team('Egypt', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/egypt.png', '../assets/large/egypt.svg', {});
+let uruguay = new Team('Uruguay', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/uruguay.png', '../assets/large/uruguay.svg', {});
 
 const groupA = [russia, saudiArabia, egypt, uruguay];
 
 //group b
-let iran = new Team('Iran', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/iran.png', '..assets/large/iran.svg');
-let spain = new Team('Spain', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/spain.png', '..assets/large/spain.svg');
-let portugal = new Team('Portugal', 0, 0, 0, 0, 0, 0, 0, 0,  '../assets/small/portugal.png', '..assets/large/portugal.svg');
-let morocco = new Team('Morocco', 0, 0, 0, 0, 0, 0, 0, 0,  '../assets/small/morocco.png', '..assets/large/morcco.svg');
+let iran = new Team('Iran', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/iran.png', '..assets/large/iran.svg', {});
+let spain = new Team('Spain', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/spain.png', '..assets/large/spain.svg', {});
+let portugal = new Team('Portugal', 0, 0, 0, 0, 0, 0, 0, 0,  '../assets/small/portugal.png', '..assets/large/portugal.svg', {});
+let morocco = new Team('Morocco', 0, 0, 0, 0, 0, 0, 0, 0,  '../assets/small/morocco.png', '..assets/large/morcco.svg', {});
 
 const groupB = [iran, spain, portugal, morocco];
 
 //group c
-let france = new Team('France', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/france.png', '../assets/large/france.svg');
-let australia = new Team('Australia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/australia.png', '../assets/large/australia.svg');
-let peru = new Team('Peru', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/peru.png', '../assets/large/peru.svg');
-let denmark = new Team('Denmark', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/denmark.png', '../assets/large/denmark.svg');
+let france = new Team('France', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/france.png', '../assets/large/france.svg', {});
+let australia = new Team('Australia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/australia.png', '../assets/large/australia.svg', {});
+let peru = new Team('Peru', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/peru.png', '../assets/large/peru.svg', {});
+let denmark = new Team('Denmark', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/denmark.png', '../assets/large/denmark.svg', {});
 
 
 const groupC = [france, australia, peru, denmark];
 
 //group d
-let argentina = new Team('Argentina', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/argentina.png', '../assets/large/argentina.svg');
-let iceland = new Team('Iceland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/iceland.png', '../assets/large/iceland.svg');
-let croatia = new Team('Croatia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/croatia.png', '../assets/large/croatia.svg');
-let nigeria = new Team('Nigeria', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/nigeria.png', '../assets/large/nigeria.svg');
+let argentina = new Team('Argentina', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/argentina.png', '../assets/large/argentina.svg', {});
+let iceland = new Team('Iceland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/iceland.png', '../assets/large/iceland.svg', {});
+let croatia = new Team('Croatia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/croatia.png', '../assets/large/croatia.svg', {});
+let nigeria = new Team('Nigeria', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/nigeria.png', '../assets/large/nigeria.svg', {});
 
 const groupD = [argentina, iceland, croatia, nigeria];
 
 //group e
-let brazil = new Team('Brazil', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/brazil.png', '../assets/large/brazil.svg');
-let switzerland = new Team('Switzerland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/switzerland.png', '../assets/large/switzerland.svg');
-let costaRica = new Team('Costa Rica', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/costa-rica.png', '../assets/large/costa-rica.svg');
-let serbia = new Team('Serbia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/serbia.png', '../assets/large/serbia.svg');
+let brazil = new Team('Brazil', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/brazil.png', '../assets/large/brazil.svg', {});
+let switzerland = new Team('Switzerland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/switzerland.png', '../assets/large/switzerland.svg', {});
+let costaRica = new Team('Costa Rica', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/costa-rica.png', '../assets/large/costa-rica.svg', {});
+let serbia = new Team('Serbia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/serbia.png', '../assets/large/serbia.svg', {});
 
 const groupE = [brazil, switzerland, costaRica, serbia];
 
 //group f
-let germany = new Team('Germany', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/germany.png', '../assets/large/germany.svg');
-let mexico = new Team('Mexico', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/mexico.png', '../assets/large/mexico.svg');
-let sweden = new Team('Sweden', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/sweden.png', '../assets/large/sweden.svg');
-let southKorea = new Team('South Korea', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/south-korea.png', '../assets/large/south-korea.svg');
+let germany = new Team('Germany', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/germany.png', '../assets/large/germany.svg', {});
+let mexico = new Team('Mexico', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/mexico.png', '../assets/large/mexico.svg', {});
+let sweden = new Team('Sweden', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/sweden.png', '../assets/large/sweden.svg', {});
+let southKorea = new Team('South Korea', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/south-korea.png', '../assets/large/south-korea.svg', {});
 
 const groupF = [germany, mexico, sweden, southKorea];
 
 //group g
-let belgium = new Team('Belgium', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/belgium.png', '../assets/large/belgium.svg');
-let panama = new Team('Panama', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/panama.png', '../assets/large/panama.svg');
-let tunisia = new Team('Tunisia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/tunisia.png', '../assets/large/tunisia.svg');
-let england = new Team('England', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/england.png', '../assets/large/england.svg');
+let belgium = new Team('Belgium', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/belgium.png', '../assets/large/belgium.svg', {});
+let panama = new Team('Panama', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/panama.png', '../assets/large/panama.svg', {});
+let tunisia = new Team('Tunisia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/tunisia.png', '../assets/large/tunisia.svg', {});
+let england = new Team('England', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/england.png', '../assets/large/england.svg', {});
 
 const groupG = [belgium, panama, tunisia, england];
 
 //group h
-let poland = new Team('Poland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/poland.png', '../assets/large/poland.svg');
-let senegal = new Team('Senegal', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/senegal.png', '../assets/large/senegal.svg');
-let colombia = new Team('Colombia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/colombia.png', '../assets/large/colombia.svg');
-let japan = new Team('Japan', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/japan.png', '../assets/large/japan.svg');
+let poland = new Team('Poland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/poland.png', '../assets/large/poland.svg', {});
+let senegal = new Team('Senegal', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/senegal.png', '../assets/large/senegal.svg', {});
+let colombia = new Team('Colombia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/colombia.png', '../assets/large/colombia.svg', {});
+let japan = new Team('Japan', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/japan.png', '../assets/large/japan.svg', {});
 
 const groupH = [poland, senegal, colombia, japan];
 
 const groups = [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH];
 
-function updateTeamData(team,teamScore, oppScore) {
+
+
+// const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, morocco, france, australia, denmark, peru, argentina
+// , iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
+// poland, senegal, colombia, japan};
+
+// let teamsArr = [];
+// groups.forEach(group => group.forEach(team => teamsArr.push(team)));
+
+// console.log(teams, teamsArr);
+
+function updateTeamData(team,teamScore, oppScore, goals) {
     if (teamScore == null) return;
     team.mp ++;
     team.gf += teamScore;
@@ -4624,20 +4636,55 @@ function updateTeamData(team,teamScore, oppScore) {
         team.losses ++; 
     }
     team.gd += teamScore - oppScore;
+    if (goals) {
+       goals.forEach(goal => {
+        let scorerName = goal.name;
+        team.hasOwnProperty(scorerName) ? team.scorers[scorerName] += 1 : team.scorers[scorerName] = 1;
+        console.log(team);
+       }) 
+    }
+    // goals.forEach(goal => {
+    //     console.log(goal);
+    //     let scorerName = goal.name;
+    //     team.hasOwnProperty(scorerName) ? team.scorers.scorerName ++ : team.scorers.scorerName = 1;
+    // })
 }
 
 matches.forEach(matchDayArr => matchDayArr.forEach(match => {
     groups.forEach(group => group.forEach(team => {
         if (match.team1 === team.name) {
-            updateTeamData(team, match.score1, match.score2);
+            updateTeamData(team, match.score1, match.score2, match.goals1);
         } else if (match.team2 === team.name) {
-            updateTeamData(team, match.score2, match.score1);
+            updateTeamData(team, match.score2, match.score1, match.goals2);
         }
     }));
 }))
 
 module.exports.groups = groups;
-},{"./matches":6}],4:[function(require,module,exports){
+},{"./matches":7}],4:[function(require,module,exports){
+// const match1goals1 = [
+//     { name: "Gazinsky", minute: 12},
+//     { name: "Cheryshev", minute: 43},
+//     { name: "Dzyuba", minute: 71},
+//     { name: "Cheryshev", minute: 90},
+//     {name: "Golovin", minute: 90}
+// ];
+
+const match1 = {
+    goals1: [
+        { name: "Gazinsky", minute: 12},
+        { name: "Cheryshev", minute: 43},
+        { name: "Dzyuba", minute: 71},
+        { name: "Cheryshev", minute: 90},
+        {name: "Golovin", minute: 90}
+    ], 
+    goals2: []
+};
+
+module.exports = {
+    match1: match1
+};
+},{}],5:[function(require,module,exports){
 let teams = require('./country_data');
 
 const groupElements = document.querySelectorAll('.nav__group--table');
@@ -4725,7 +4772,7 @@ allGroups.forEach((group, index) => {
 
     groupElements[index].insertAdjacentHTML('beforeend', table);
 });
-},{"./country_data":3}],5:[function(require,module,exports){
+},{"./country_data":3}],6:[function(require,module,exports){
 const matchData = require('./matches');
 const countryData = require('./country_data');
 const moment = require('moment');
@@ -4733,15 +4780,25 @@ const moment = require('moment');
 const matches = matchData.matches;
 const countryElements = document.querySelectorAll('[data-country');
 
+console.log(countryData);
+
 function getInfo(countryName) {
+    //initialize variables
     let prevMatch = false;
     let nextMatch = [];
+    let formatName = countryName.toLowerCase().replace(' ', '-');
     
+    //check matches to see if country matches team1 or team2 property
+    //Also check if a score, meaning the game has already been played 
+    //and if no score, it must be a future match
     matches.forEach(matchDayArr => matchDayArr.forEach(match => {
         if (countryName === match.team1 || countryName === match.team2) {
             match.score1 !== null && match.score2 !== null ? prevMatch = match : nextMatch.push(match);
         }
     }));
+    
+    //function to look through prevMatch or nextMatch and grab info to construct 
+    //info element that will be inserted into HTML
     
     function createMatchBox(matchInfo) {
         //set names and scores correctly for country and country opponent
@@ -4757,14 +4814,14 @@ function getInfo(countryName) {
             console.log(matchInfo);
         }
         
-        //find local user time of match 
+        //find local user time of match with moment.js
         let utc = matchInfo.timezone.split('+')[1];
         let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
         
         //format names to use to find correct image from assets folder
-        let formatName = countryName.toLowerCase().replace(' ', '-');
         let formatOppName = opponent.toLowerCase().replace(' ', '-');
         
+        //correct html for setting prevMatch element info
         if (matchInfo === prevMatch) {
            let box = `
             <div class="info__match--date">
@@ -4796,17 +4853,19 @@ function getInfo(countryName) {
         }
     }
     
-    let box;
+    // let formatName = countryName.toLowerCase().replace(' ', '-');
     
+    let infoBox = `
+    <div class="info__name">
+        <img src="./assets/small/${formatName}.png">
+        <p>${countryName}</p>
+    </div>`;
+
     let nextHTML = createMatchBox(nextMatch[0]);
+    
     if (prevMatch) {
-        console.log(prevMatch.highlight, countryName);
         let prevHTML = createMatchBox(prevMatch);
-        box = `
-        <div class="info__name">
-            <img src="./assets/small/russia.png">
-            <p>Russia</p>
-        </div>
+        infoBox += `
         <div class="info__row">
             <div class="info__match info__prev">
               <h2>Prev Match</h2>
@@ -4817,26 +4876,26 @@ function getInfo(countryName) {
                 ${nextHTML}
             </div>
         </div>
-        <div class="info__details>
-            <div class=info__details--video>
-                <iframe src=${prevMatch.highlight}></iframe> 
+        <div class="info__details">
+            <div class="info__details--video">
+                <a href="https://www.youtube.com/watch?v=${prevMatch.youtubeID}" target="_blank"> 
+                    <img src="https://img.youtube.com/vi/${prevMatch.youtubeID}/maxresdefault.jpg"></img>
+                </a>        
             </div>
-            <div class="info__details--scorers>
-                <h1>Top Scorers</h1>
-                <div>
-                    <p>name goals</p>
+            <div class="info__details--scorers">
+                <h2>Top Scorers</h2>
+                <div class="scorer-row">
+                    <p>1. Person</p>
+                    <p>2. Person 2</p>
                 </div>
+                
             </div>
         </div>
         
         `;
-         return box;
+         return infoBox;
     } else {
-        box = `
-        <div class="info__name">
-            <img src="./assets/small/russia.png">
-            <p>Russia</p>
-        </div>
+        infoBox += `
         <div class="info__row">
             <div class="info__match info__next">
                 <h2>Next Match</h2>  
@@ -4844,28 +4903,8 @@ function getInfo(countryName) {
             </div>
         </div>  
         `;
-        return box;
+        return infoBox;
     }
-    
-    // <iframe src=${prevMatch.highlight}></iframe> 
-    
-    // let box = `
-    // <div class="info__name">
-    //     <img src="./assets/small/russia.png">
-    //     <p>Russia</p>
-    // </div>
-    // <div class="info__row">
-    //     <div class="info__match info__prev">
-    //       <h2>Prev Match</h2>
-    //       ${prevHTML}
-    //     </div>
-    //     <div class="info__match info__next">
-    //         <h2>Next Match</h2>  
-    //         ${nextHTML}
-    //     </div>
-    // </div>    
-    
-    // `;
 
 }
 
@@ -4875,12 +4914,15 @@ countryElements.forEach(country => {
     country.insertAdjacentHTML('beforeend', createdInfoBox);
 });
 
-},{"./country_data":3,"./matches":6,"moment":2}],6:[function(require,module,exports){
+},{"./country_data":3,"./matches":7,"moment":2}],7:[function(require,module,exports){
 let countryData = require('./country_data');
+let goals = require('./goals');
 
 let teams = countryData.groups;
 
-function Match(num, date, time, team1, team2, score1, score2, stadium, city, timezone, highlight) {
+// goals.match1.goals1.forEach(goal => console.log(goal));
+
+function Match(num, date, time, team1, team2, score1, score2, stadium, city, timezone, youtubeID, goals1, goals2) {
     this.num = num;
     this.date = date;
     this.time = time;
@@ -4893,7 +4935,9 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
     this.stadium = stadium;
     this.city = city;
     this.timezone = timezone;
-    this.highlight = highlight;
+    this.youtubeID = youtubeID;
+    this.goals1 = goals1;
+    this.goals2 = goals2;
 }
 
 // let match1Russia = {
@@ -4904,82 +4948,84 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
 // }
 
 //Matchday 1
-const match1 = new Match(1, '2018-06-14', '18:00', 'Russia', 'Saudi Arabia', 5, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "https://www.youtube.com/embed/SDY1N-IJOA8");
+const match1 = new Match(1, '2018-06-14', '18:00', 'Russia', 'Saudi Arabia', 5, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "SDY1N-IJOA8", goals.match1.goals1, goals.match1.goals2);
+
+console.log(match1);
 
 const matchDay1 = [match1];
 
 //Matchday 2
-const match2 = new Match(2, '2018-06-15', '17:00', 'Egypt', 'Uruguay', 0, 1, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "https://www.youtube.com/embed/LPzZa-Btx6I");
-const match3 = new Match(3, '2018-06-15', '21:00', 'Portugal', 'Spain', 3, 3, 'Fisht Stadium', 'Sochi', 'UTC+3', "https://www.youtube.com/embed/4rp2aLQl7vg");
-const match4 = new Match(4, '2018-06-15', '18:00', 'Morocco', 'Iran', 0, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "https://www.youtube.com/embed/rG6hK0eZ_Ys");
+const match2 = new Match(2, '2018-06-15', '17:00', 'Egypt', 'Uruguay', 0, 1, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "LPzZa-Btx6I");
+const match3 = new Match(3, '2018-06-15', '21:00', 'Portugal', 'Spain', 3, 3, 'Fisht Stadium', 'Sochi', 'UTC+3', "4rp2aLQl7vg");
+const match4 = new Match(4, '2018-06-15', '18:00', 'Morocco', 'Iran', 0, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "rG6hK0eZ_Ys");
 
 const matchDay2 = [match2, match3, match4];
 
 //Matchday 3
-const match5 = new Match(5, '2018-06-16', '13:00', 'France', 'Australia', 2, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "https://www.youtube.com/embed/-4_SXeQdIJo");
-const match6 = new Match(6, '2018-06-16', '16:00', 'Argentina', 'Iceland', 1, 1, 'Spartak Stadium', 'Moscow', 'UTC+3', "https://www.youtube.com/embed/Xvarnwv6hRk");
-const match7 = new Match(7, '2018-06-16', '19:00', 'Peru', 'Denmark', 0, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "https://www.youtube.com/embed/O4odLCih0Os");
-const match8 = new Match(8, '2018-06-16', '21:00', 'Croatia', 'Nigeria', 2, 0, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "https://www.youtube.com/embed/qS-V5h0wKr8");
+const match5 = new Match(5, '2018-06-16', '13:00', 'France', 'Australia', 2, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "-4_SXeQdIJo");
+const match6 = new Match(6, '2018-06-16', '16:00', 'Argentina', 'Iceland', 1, 1, 'Spartak Stadium', 'Moscow', 'UTC+3', "Xvarnwv6hRk");
+const match7 = new Match(7, '2018-06-16', '19:00', 'Peru', 'Denmark', 0, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "O4odLCih0Os");
+const match8 = new Match(8, '2018-06-16', '21:00', 'Croatia', 'Nigeria', 2, 0, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "qS-V5h0wKr8");
 
 const matchDay3 = [match5, match6, match7, match8];
 
 //Matchday 4
-const match9 = new Match(9, '2018-06-17', '16:00', 'Costa Rica', 'Serbia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "https://www.youtube.com/embed/bA6_7wFvG0E");
-const match10 = new Match(10, '2018-06-17', '18:00', 'Germany', 'Mexico', 0, 1, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "https://www.youtube.com/embed/6BSeFs40QOI");
-const match11 = new Match(11, '2018-06-17', '21:00', 'Brazil', 'Switzerland', 1, 1, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "https://www.youtube.com/embed/3dWrKNrWbWQ");
+const match9 = new Match(9, '2018-06-17', '16:00', 'Costa Rica', 'Serbia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "bA6_7wFvG0E");
+const match10 = new Match(10, '2018-06-17', '18:00', 'Germany', 'Mexico', 0, 1, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "6BSeFs40QOI");
+const match11 = new Match(11, '2018-06-17', '21:00', 'Brazil', 'Switzerland', 1, 1, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "3dWrKNrWbWQ");
 
 const matchDay4 = [match9, match10, match11];
 
 //Matchday 5
-const match12 = new Match(12, '2018-06-18', '15:00', 'Sweden', 'South Korea', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3');
-const match13 = new Match(13, '2018-06-18', '18:00', 'Belgium', 'Panama', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3');
-const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', null, null, 'Volgograd Arean', 'Volgograd', 'UTC+3');
+const match12 = new Match(12, '2018-06-18', '15:00', 'Sweden', 'South Korea', 1, 0, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "5ZlE-hUl5UU");
+const match13 = new Match(13, '2018-06-18', '18:00', 'Belgium', 'Panama', 3, 0, 'Fisht Stadium', 'Sochi', 'UTC+3', "XCr1xpwEuZQ");
+const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', 1, 2, 'Volgograd Arean', 'Volgograd', 'UTC+3', "u3wfrhjoIJg");
 
 const matchDay5 = [match12, match13, match14];
 
 //Matchday 6
-const match15 = new Match(15, '2018-06-19', '15:00', 'Colombia', 'Japan', null, null, 'Mordovia Arena', 'Saransk', 'UTC+3');
-const match16 = new Match(16, '2018-06-19', '18:00', 'Poland', 'Senegal', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3');
-const match17 = new Match(17, '2018-06-19', '21:00', 'Russia', 'Egypt', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3');
+const match15 = new Match(15, '2018-06-19', '15:00', 'Colombia', 'Japan', null, null, 'Mordovia Arena', 'Saransk', 'UTC+3', null);
+const match16 = new Match(16, '2018-06-19', '18:00', 'Poland', 'Senegal', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
+const match17 = new Match(17, '2018-06-19', '21:00', 'Russia', 'Egypt', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
 
 const matchDay6 = [match15, match16, match17];
 
 //Matchday 7 
-const match18 = new Match(18, '2018-06-20', '15:00', 'Portugal', 'Morocco', null, null, 'Luzhniki Stadium', 'Moscow', 'UTC+3');
-const match19 = new Match(19, '2018-06-20', '18:00', 'Uruguay', 'Saudi Arabia', null, null, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3');
-const match20 = new Match(20, '2018-06-20', '21:00', 'Iran', 'Spain', null, null, 'Kazan Arena', 'Kazan', 'UTC+3');
+const match18 = new Match(18, '2018-06-20', '15:00', 'Portugal', 'Morocco', null, null, 'Luzhniki Stadium', 'Moscow', 'UTC+3', null);
+const match19 = new Match(19, '2018-06-20', '18:00', 'Uruguay', 'Saudi Arabia', null, null, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', null);
+const match20 = new Match(20, '2018-06-20', '21:00', 'Iran', 'Spain', null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
 
 const matchDay7 = [match18, match19, match20];
 
 //Matchday 8 
-const match21 = new Match(21, '2018-06-21', '16:00', 'Denmark', 'Australia', null, null, 'Samara Arena', 'Samara', 'UTC+4');
-const match22 = new Match(22, '2018-06-21', '20:00', 'France', 'Peru', null, null, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5');
-const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3');
+const match21 = new Match(21, '2018-06-21', '16:00', 'Denmark', 'Australia', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
+const match22 = new Match(22, '2018-06-21', '20:00', 'France', 'Peru', null, null, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', null);
+const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
 
 const matchDay8 = [match21, match22, match23];
 
 //Matchday 9
-const match24 = new Match(24, '2018-06-22', '15:00', 'Brazil', 'Costa Rica', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3');
-const match25 = new Match(25, '2018-06-22', '18:00', 'Nigeria', 'Iceland', null, null, 'Volgograd Arena', 'Volgograd', 'UTC+3');
-const match26 = new Match(26, '2018-06-22', '20:00', 'Serbia', 'Switzerland', null, null, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2');
+const match24 = new Match(24, '2018-06-22', '15:00', 'Brazil', 'Costa Rica', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
+const match25 = new Match(25, '2018-06-22', '18:00', 'Nigeria', 'Iceland', null, null, 'Volgograd Arena', 'Volgograd', 'UTC+3', null);
+const match26 = new Match(26, '2018-06-22', '20:00', 'Serbia', 'Switzerland', null, null, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', null);
 
 const matchDay9 = [match24, match25, match26];
 
 //Matchday 10
-const match27 = new Match(27, '2018-06-23', '15:00', 'Belgium', 'Tunisia', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3');
-const match28 = new Match(28, '2018-06-23', '18:00', 'South Korea', 'Mexico', null, null, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3');
-const match29 = new Match(29, '2018-06-23', '21:00', 'Germany', 'Sweden', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3');
+const match27 = new Match(27, '2018-06-23', '15:00', 'Belgium', 'Tunisia', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
+const match28 = new Match(28, '2018-06-23', '18:00', 'South Korea', 'Mexico', null, null, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', null);
+const match29 = new Match(29, '2018-06-23', '21:00', 'Germany', 'Sweden', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
 
 const matchDay10 = [match27, match28, match29];
 
 //Matchday 11
-const match30 = new Match(30, '2018-06-24', '15:00', 'England', 'Panama', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3');
-const match31 = new Match(31, '2018-06-24', '20:00', 'Japan', 'Senegal', null, null, 'Ekaterinburg Arena', 'Ekaterinburg', 'UTC+5');
-const match32 = new Match(32, '2018-06-24', '21:00', 'Poland', 'Colombia', null, null, 'Kazan Arena', 'Kazan', 'UTC+3');
+const match30 = new Match(30, '2018-06-24', '15:00', 'England', 'Panama', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match31 = new Match(31, '2018-06-24', '20:00', 'Japan', 'Senegal', null, null, 'Ekaterinburg Arena', 'Ekaterinburg', 'UTC+5', null);
+const match32 = new Match(32, '2018-06-24', '21:00', 'Poland', 'Colombia', null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
 
 const matchDay11 = [match30, match31, match32];
 
 const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11];
 
 module.exports.matches = matches;
-},{"./country_data":3}]},{},[1]);
+},{"./country_data":3,"./goals":4}]},{},[1]);

@@ -318,23 +318,32 @@ nav {
         font-weight: 700;
         @include flex(space-around, center);
     
-        & * {max-width: 20%;}
+        & * {
+            max-width: 20%;
+        }
     }
     
     &__details {
-        max-height: 40%;
+        height: 42%;
         width: 100%;
         @include flex(center, center);
         
-        // &--video {
-        //     height: 100%;
-        //     max-width: 50%;
+        &--video {
+            height: 100%;
+            width: 50%;
+            @include flex(center, center);
             
-        //     iframe {
-        //         width: 100%;
-        //         height: 100%;
-        //     }
-        // }
+            img, a {
+                height: 100%;
+                cursor: pointer;
+            }
+            
+        }
+        
+        &--scorers {
+            height: 100%;
+            width: 50%;
+        }
     }
 }
 
