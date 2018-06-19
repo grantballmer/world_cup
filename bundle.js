@@ -4611,9 +4611,9 @@ const groups = [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH];
 
 
 
-// const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, morocco, france, australia, denmark, peru, argentina
-// , iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
-// poland, senegal, colombia, japan};
+const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, morocco, france, australia, denmark, peru, argentina
+, iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
+poland, senegal, colombia, japan};
 
 // let teamsArr = [];
 // groups.forEach(group => group.forEach(team => teamsArr.push(team)));
@@ -4637,17 +4637,11 @@ function updateTeamData(team,teamScore, oppScore, goals) {
     }
     team.gd += teamScore - oppScore;
     if (goals) {
-       goals.forEach(goal => {
-        let scorerName = goal.name;
-        team.hasOwnProperty(scorerName) ? team.scorers[scorerName] += 1 : team.scorers[scorerName] = 1;
-        console.log(team);
-       }) 
+        goals.forEach(goal => {
+            let scorerName = goal.name;
+            team.scorers.hasOwnProperty(scorerName) ? team.scorers[scorerName] += 1 : team.scorers[scorerName] = 1;
+        }) 
     }
-    // goals.forEach(goal => {
-    //     console.log(goal);
-    //     let scorerName = goal.name;
-    //     team.hasOwnProperty(scorerName) ? team.scorers.scorerName ++ : team.scorers.scorerName = 1;
-    // })
 }
 
 matches.forEach(matchDayArr => matchDayArr.forEach(match => {
@@ -4660,7 +4654,10 @@ matches.forEach(matchDayArr => matchDayArr.forEach(match => {
     }));
 }))
 
-module.exports.groups = groups;
+module.exports = {
+    groups,
+    teams
+}
 },{"./matches":7}],4:[function(require,module,exports){
 // const match1goals1 = [
 //     { name: "Gazinsky", minute: 12},
@@ -4672,17 +4669,149 @@ module.exports.groups = groups;
 
 const match1 = {
     goals1: [
-        { name: "Gazinsky", minute: 12},
-        { name: "Cheryshev", minute: 43},
-        { name: "Dzyuba", minute: 71},
-        { name: "Cheryshev", minute: 90},
-        {name: "Golovin", minute: 90}
+        { name: "Yury Gazinsky", minute: 12},
+        { name: "Denis Cheryshev", minute: 43},
+        { name: "Artem Dzyuba", minute: 71},
+        { name: "Denis Cheryshev", minute: 90},
+        {name: "Aleksandr Golovin", minute: 90}
     ], 
     goals2: []
 };
 
+
+const match2 = {
+    goals1: [], 
+    goals2: [
+        { name: "Jose Gimenez", minute: 89}
+    ]
+}
+
+const match3 = {
+    goals1: [], 
+    goals2: [
+        { name: "Aziz Bouhaddouz", minute: 89}
+    ]
+}
+
+const match4 = {
+    goals1: [
+        {name: "Cristiano Ronaldo", minute: 4},
+        {name: "Cristiano Ronaldo", minute: 44},
+        {name: "Cristiano Ronaldo", minute: 88}
+    ], 
+    goals2: [
+        {name: "Diego Costa", minute: 24},
+        {name: "Diego Costa", minute: 55},
+        {name: "Nacho", minute: 58}
+    ]
+}
+
+const match5 = {
+    goals1: [
+        {name: "Antoine Griezmann", minute: 58},
+    ], 
+    goals2: [
+        {name: "Mile Jedinak", minute: 62}
+    ]
+}
+
+const match6 = {
+    goals1: [
+        {name: "Sergio Aguero", minute: 19},
+    ], 
+    goals2: [
+        {name: "Alfred Finnbogason", minute: 23}
+    ]
+}
+
+const match7 = {
+    goals1: [], 
+    goals2: [
+        {name: "Yussuf Yurary Poulsen", minute: 59}
+    ]
+}
+
+const match8 = {
+    goals1: [
+        {name: "Luka Modric", minute: 59}
+    ], 
+    goals2: []
+}
+
+const match9 = {
+    goals1: [], 
+    goals2: [
+        {name: "Aleksandar Kolarov", minute: 56}
+    ]
+}
+
+const match10 = {
+    goals1: [], 
+    goals2: [
+        {name: "Hirving Lozano", minute: 35}
+    ]
+}
+
+const match11 = {
+    goals1: [
+        {name: "Philippe Coutinho", minute: 20}
+    ], 
+    goals2: [
+        {name: "Steven Zuber", minute: 50}
+    ]
+}
+
+const match12 = {
+    goals1: [
+        {name: "Andreas Granqvist", minute: 65}
+    ], 
+    goals2: []
+}
+
+const match13 = {
+    goals1: [
+        {name: "Dries Mertens", minute: 47},
+        {name: "Romelu Lukaku", minute: 69},
+        {name: "Romelu Lukaku", minute: 75}
+    ], 
+    goals2: []
+}
+
+const match14 = {
+    goals1: [
+        {name: "Ferjani Sassi", minute: 35}
+    ], 
+    goals2: [
+        {name: "Harry Kane", minute: 11},
+        {name: "Harry Kane", minute: 90}
+    ]
+}
+
+// const match14 = {
+//     goals1: [
+//         {name: "Ferjani Sassi", minute: 35}
+//     ], 
+//     goals2: [
+//         {name: "Harry Kane", minute: 11},
+//         {name: "Harry Kane", minute: 90}
+//     ]
+// }
+
 module.exports = {
-    match1: match1
+    match1,
+    match2,
+    match3,
+    match4,
+    match5,
+    match6,
+    match7,
+    match8,
+    match9,
+    match10,
+    match11,
+    match12,
+    match13,
+    match14
 };
 },{}],5:[function(require,module,exports){
 let teams = require('./country_data');
@@ -4780,8 +4909,6 @@ const moment = require('moment');
 const matches = matchData.matches;
 const countryElements = document.querySelectorAll('[data-country');
 
-console.log(countryData);
-
 function getInfo(countryName) {
     //initialize variables
     let prevMatch = false;
@@ -4855,6 +4982,29 @@ function getInfo(countryName) {
     
     // let formatName = countryName.toLowerCase().replace(' ', '-');
     
+    function createScorersInfo() {
+        let formatForVariable = countryName[0].toLowerCase() + countryName.substring(1).replace(' ', '');
+        let country = countryData.teams[formatForVariable];
+        let scorerLength = Object.keys(country.scorers).length;
+        let element = `<div class="scorer-row">`;
+        for (let player in country.scorers) {
+            let playerElement = `
+            <p>${player} ${country.scorers[player]}</p>
+            `;
+            element += playerElement;
+        }
+
+        element += `</div>`
+        console.log(element);
+        // let element = `
+        // <div class="scorer-row">
+        //     <p>1. Person</p>
+        //     <p>2. Person 2</p>
+        // </div>`
+    }
+
+    createScorersInfo();
+
     let infoBox = `
     <div class="info__name">
         <img src="./assets/small/${formatName}.png">
@@ -4950,36 +5100,34 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
 //Matchday 1
 const match1 = new Match(1, '2018-06-14', '18:00', 'Russia', 'Saudi Arabia', 5, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "SDY1N-IJOA8", goals.match1.goals1, goals.match1.goals2);
 
-console.log(match1);
-
 const matchDay1 = [match1];
 
 //Matchday 2
-const match2 = new Match(2, '2018-06-15', '17:00', 'Egypt', 'Uruguay', 0, 1, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "LPzZa-Btx6I");
-const match3 = new Match(3, '2018-06-15', '21:00', 'Portugal', 'Spain', 3, 3, 'Fisht Stadium', 'Sochi', 'UTC+3', "4rp2aLQl7vg");
-const match4 = new Match(4, '2018-06-15', '18:00', 'Morocco', 'Iran', 0, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "rG6hK0eZ_Ys");
+const match2 = new Match(2, '2018-06-15', '17:00', 'Egypt', 'Uruguay', 0, 1, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "LPzZa-Btx6I", goals.match2.goals1, goals.match2.goals2);
+const match3 = new Match(3, '2018-06-15', '18:00', 'Morocco', 'Iran', 0, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "rG6hK0eZ_Ys", goals.match3.goals1, goals.match3.goals2);
+const match4 = new Match(4, '2018-06-15', '21:00', 'Portugal', 'Spain', 3, 3, 'Fisht Stadium', 'Sochi', 'UTC+3', "4rp2aLQl7vg", goals.match4.goals1, goals.match4.goals2);
 
 const matchDay2 = [match2, match3, match4];
 
 //Matchday 3
-const match5 = new Match(5, '2018-06-16', '13:00', 'France', 'Australia', 2, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "-4_SXeQdIJo");
-const match6 = new Match(6, '2018-06-16', '16:00', 'Argentina', 'Iceland', 1, 1, 'Spartak Stadium', 'Moscow', 'UTC+3', "Xvarnwv6hRk");
-const match7 = new Match(7, '2018-06-16', '19:00', 'Peru', 'Denmark', 0, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "O4odLCih0Os");
-const match8 = new Match(8, '2018-06-16', '21:00', 'Croatia', 'Nigeria', 2, 0, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "qS-V5h0wKr8");
+const match5 = new Match(5, '2018-06-16', '13:00', 'France', 'Australia', 2, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "-4_SXeQdIJo", goals.match5.goals1, goals.match5.goals2);
+const match6 = new Match(6, '2018-06-16', '16:00', 'Argentina', 'Iceland', 1, 1, 'Spartak Stadium', 'Moscow', 'UTC+3', "Xvarnwv6hRk", goals.match6.goals1, goals.match6.goals2);
+const match7 = new Match(7, '2018-06-16', '19:00', 'Peru', 'Denmark', 0, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "O4odLCih0Os", goals.match7.goals1, goals.match7.goals2);
+const match8 = new Match(8, '2018-06-16', '21:00', 'Croatia', 'Nigeria', 2, 0, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "qS-V5h0wKr8", goals.match8.goals1, goals.match8.goals2);
 
 const matchDay3 = [match5, match6, match7, match8];
 
 //Matchday 4
-const match9 = new Match(9, '2018-06-17', '16:00', 'Costa Rica', 'Serbia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "bA6_7wFvG0E");
-const match10 = new Match(10, '2018-06-17', '18:00', 'Germany', 'Mexico', 0, 1, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "6BSeFs40QOI");
-const match11 = new Match(11, '2018-06-17', '21:00', 'Brazil', 'Switzerland', 1, 1, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "3dWrKNrWbWQ");
+const match9 = new Match(9, '2018-06-17', '16:00', 'Costa Rica', 'Serbia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "bA6_7wFvG0E", goals.match9.goals1, goals.match9.goals2);
+const match10 = new Match(10, '2018-06-17', '18:00', 'Germany', 'Mexico', 0, 1, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "6BSeFs40QOI", goals.match10.goals1, goals.match10.goals2);
+const match11 = new Match(11, '2018-06-17', '21:00', 'Brazil', 'Switzerland', 1, 1, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "3dWrKNrWbWQ", goals.match11.goals1, goals.match11.goals2);
 
 const matchDay4 = [match9, match10, match11];
 
 //Matchday 5
-const match12 = new Match(12, '2018-06-18', '15:00', 'Sweden', 'South Korea', 1, 0, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "5ZlE-hUl5UU");
-const match13 = new Match(13, '2018-06-18', '18:00', 'Belgium', 'Panama', 3, 0, 'Fisht Stadium', 'Sochi', 'UTC+3', "XCr1xpwEuZQ");
-const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', 1, 2, 'Volgograd Arean', 'Volgograd', 'UTC+3', "u3wfrhjoIJg");
+const match12 = new Match(12, '2018-06-18', '15:00', 'Sweden', 'South Korea', 1, 0, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "5ZlE-hUl5UU", goals.match12.goals1, goals.match12.goals2);
+const match13 = new Match(13, '2018-06-18', '18:00', 'Belgium', 'Panama', 3, 0, 'Fisht Stadium', 'Sochi', 'UTC+3', "XCr1xpwEuZQ", goals.match13.goals1, goals.match13.goals2);
+const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', 1, 2, 'Volgograd Arean', 'Volgograd', 'UTC+3', "u3wfrhjoIJg", goals.match14.goals1, goals.match14.goals2);
 
 const matchDay5 = [match12, match13, match14];
 

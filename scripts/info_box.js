@@ -5,8 +5,6 @@ const moment = require('moment');
 const matches = matchData.matches;
 const countryElements = document.querySelectorAll('[data-country');
 
-console.log(countryData);
-
 function getInfo(countryName) {
     //initialize variables
     let prevMatch = false;
@@ -80,6 +78,29 @@ function getInfo(countryName) {
     
     // let formatName = countryName.toLowerCase().replace(' ', '-');
     
+    function createScorersInfo() {
+        let formatForVariable = countryName[0].toLowerCase() + countryName.substring(1).replace(' ', '');
+        let country = countryData.teams[formatForVariable];
+        let scorerLength = Object.keys(country.scorers).length;
+        let element = `<div class="scorer-row">`;
+        for (let player in country.scorers) {
+            let playerElement = `
+            <p>${player} ${country.scorers[player]}</p>
+            `;
+            element += playerElement;
+        }
+
+        element += `</div>`
+        console.log(element);
+        // let element = `
+        // <div class="scorer-row">
+        //     <p>1. Person</p>
+        //     <p>2. Person 2</p>
+        // </div>`
+    }
+
+    createScorersInfo();
+
     let infoBox = `
     <div class="info__name">
         <img src="./assets/small/${formatName}.png">

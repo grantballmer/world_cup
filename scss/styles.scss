@@ -287,6 +287,8 @@ nav {
     }
 
     &__row {
+        height: 37%;
+        margin: 1% 0;
         @include flex(center, center);
         
         img {
@@ -296,9 +298,9 @@ nav {
 
     &__match {
         width: 48%;
-        height: 25%;
-        margin: 5px 5px;
-        padding: 5px;
+        height: 100%;
+        margin: 0 5px;
+        padding: 3px;
         border-radius: 8px;
         border: .5px solid black;
         @include flex(center, center);
@@ -312,19 +314,20 @@ nav {
     }
     
     .score__row {
-        max-height: 50%;
+        height: 50%;
         width: 100%;
         font-size: .7rem;
         font-weight: 700;
         @include flex(space-around, center);
     
         & * {
+            max-height: 100%;
             max-width: 20%;
         }
     }
     
     &__details {
-        height: 42%;
+        height: 46%;
         width: 100%;
         @include flex(center, center);
         
@@ -346,7 +349,6 @@ nav {
         }
     }
 }
-
 
 .country__image {
     height: 48%;

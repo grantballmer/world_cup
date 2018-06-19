@@ -85,9 +85,9 @@ const groups = [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH];
 
 
 
-// const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, morocco, france, australia, denmark, peru, argentina
-// , iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
-// poland, senegal, colombia, japan};
+const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, morocco, france, australia, denmark, peru, argentina
+, iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
+poland, senegal, colombia, japan};
 
 // let teamsArr = [];
 // groups.forEach(group => group.forEach(team => teamsArr.push(team)));
@@ -111,17 +111,11 @@ function updateTeamData(team,teamScore, oppScore, goals) {
     }
     team.gd += teamScore - oppScore;
     if (goals) {
-       goals.forEach(goal => {
-        let scorerName = goal.name;
-        team.hasOwnProperty(scorerName) ? team.scorers[scorerName] += 1 : team.scorers[scorerName] = 1;
-        console.log(team);
-       }) 
+        goals.forEach(goal => {
+            let scorerName = goal.name;
+            team.scorers.hasOwnProperty(scorerName) ? team.scorers[scorerName] += 1 : team.scorers[scorerName] = 1;
+        }) 
     }
-    // goals.forEach(goal => {
-    //     console.log(goal);
-    //     let scorerName = goal.name;
-    //     team.hasOwnProperty(scorerName) ? team.scorers.scorerName ++ : team.scorers.scorerName = 1;
-    // })
 }
 
 matches.forEach(matchDayArr => matchDayArr.forEach(match => {
@@ -134,4 +128,7 @@ matches.forEach(matchDayArr => matchDayArr.forEach(match => {
     }));
 }))
 
-module.exports.groups = groups;
+module.exports = {
+    groups,
+    teams
+}

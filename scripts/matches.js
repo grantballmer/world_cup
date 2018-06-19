@@ -33,36 +33,34 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
 //Matchday 1
 const match1 = new Match(1, '2018-06-14', '18:00', 'Russia', 'Saudi Arabia', 5, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "SDY1N-IJOA8", goals.match1.goals1, goals.match1.goals2);
 
-console.log(match1);
-
 const matchDay1 = [match1];
 
 //Matchday 2
-const match2 = new Match(2, '2018-06-15', '17:00', 'Egypt', 'Uruguay', 0, 1, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "LPzZa-Btx6I");
-const match3 = new Match(3, '2018-06-15', '21:00', 'Portugal', 'Spain', 3, 3, 'Fisht Stadium', 'Sochi', 'UTC+3', "4rp2aLQl7vg");
-const match4 = new Match(4, '2018-06-15', '18:00', 'Morocco', 'Iran', 0, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "rG6hK0eZ_Ys");
+const match2 = new Match(2, '2018-06-15', '17:00', 'Egypt', 'Uruguay', 0, 1, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "LPzZa-Btx6I", goals.match2.goals1, goals.match2.goals2);
+const match3 = new Match(3, '2018-06-15', '18:00', 'Morocco', 'Iran', 0, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "rG6hK0eZ_Ys", goals.match3.goals1, goals.match3.goals2);
+const match4 = new Match(4, '2018-06-15', '21:00', 'Portugal', 'Spain', 3, 3, 'Fisht Stadium', 'Sochi', 'UTC+3', "4rp2aLQl7vg", goals.match4.goals1, goals.match4.goals2);
 
 const matchDay2 = [match2, match3, match4];
 
 //Matchday 3
-const match5 = new Match(5, '2018-06-16', '13:00', 'France', 'Australia', 2, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "-4_SXeQdIJo");
-const match6 = new Match(6, '2018-06-16', '16:00', 'Argentina', 'Iceland', 1, 1, 'Spartak Stadium', 'Moscow', 'UTC+3', "Xvarnwv6hRk");
-const match7 = new Match(7, '2018-06-16', '19:00', 'Peru', 'Denmark', 0, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "O4odLCih0Os");
-const match8 = new Match(8, '2018-06-16', '21:00', 'Croatia', 'Nigeria', 2, 0, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "qS-V5h0wKr8");
+const match5 = new Match(5, '2018-06-16', '13:00', 'France', 'Australia', 2, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "-4_SXeQdIJo", goals.match5.goals1, goals.match5.goals2);
+const match6 = new Match(6, '2018-06-16', '16:00', 'Argentina', 'Iceland', 1, 1, 'Spartak Stadium', 'Moscow', 'UTC+3', "Xvarnwv6hRk", goals.match6.goals1, goals.match6.goals2);
+const match7 = new Match(7, '2018-06-16', '19:00', 'Peru', 'Denmark', 0, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "O4odLCih0Os", goals.match7.goals1, goals.match7.goals2);
+const match8 = new Match(8, '2018-06-16', '21:00', 'Croatia', 'Nigeria', 2, 0, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "qS-V5h0wKr8", goals.match8.goals1, goals.match8.goals2);
 
 const matchDay3 = [match5, match6, match7, match8];
 
 //Matchday 4
-const match9 = new Match(9, '2018-06-17', '16:00', 'Costa Rica', 'Serbia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "bA6_7wFvG0E");
-const match10 = new Match(10, '2018-06-17', '18:00', 'Germany', 'Mexico', 0, 1, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "6BSeFs40QOI");
-const match11 = new Match(11, '2018-06-17', '21:00', 'Brazil', 'Switzerland', 1, 1, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "3dWrKNrWbWQ");
+const match9 = new Match(9, '2018-06-17', '16:00', 'Costa Rica', 'Serbia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "bA6_7wFvG0E", goals.match9.goals1, goals.match9.goals2);
+const match10 = new Match(10, '2018-06-17', '18:00', 'Germany', 'Mexico', 0, 1, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "6BSeFs40QOI", goals.match10.goals1, goals.match10.goals2);
+const match11 = new Match(11, '2018-06-17', '21:00', 'Brazil', 'Switzerland', 1, 1, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "3dWrKNrWbWQ", goals.match11.goals1, goals.match11.goals2);
 
 const matchDay4 = [match9, match10, match11];
 
 //Matchday 5
-const match12 = new Match(12, '2018-06-18', '15:00', 'Sweden', 'South Korea', 1, 0, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "5ZlE-hUl5UU");
-const match13 = new Match(13, '2018-06-18', '18:00', 'Belgium', 'Panama', 3, 0, 'Fisht Stadium', 'Sochi', 'UTC+3', "XCr1xpwEuZQ");
-const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', 1, 2, 'Volgograd Arean', 'Volgograd', 'UTC+3', "u3wfrhjoIJg");
+const match12 = new Match(12, '2018-06-18', '15:00', 'Sweden', 'South Korea', 1, 0, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "5ZlE-hUl5UU", goals.match12.goals1, goals.match12.goals2);
+const match13 = new Match(13, '2018-06-18', '18:00', 'Belgium', 'Panama', 3, 0, 'Fisht Stadium', 'Sochi', 'UTC+3', "XCr1xpwEuZQ", goals.match13.goals1, goals.match13.goals2);
+const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', 1, 2, 'Volgograd Arean', 'Volgograd', 'UTC+3', "u3wfrhjoIJg", goals.match14.goals1, goals.match14.goals2);
 
 const matchDay5 = [match12, match13, match14];
 
