@@ -33,10 +33,6 @@ function getInfo(countryName) {
            [countryScore, opponent, oppScore] = [matchInfo.score2, matchInfo.team1, matchInfo.score1]; 
         }
         
-        if (matchInfo.timezone == undefined) {
-            console.log(matchInfo);
-        }
-        
         //find local user time of match with moment.js
         let utc = matchInfo.timezone.split('+')[1];
         let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');

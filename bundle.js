@@ -4,18 +4,10 @@ let tables = require('./scripts/group_tables');
 let matches = require('./scripts/matches');
 const countryData = require('./scripts/country_data');
 const infoBoxes = require('./scripts/info_box');
+const schedule = require('./scripts/schedule');
 
-// console.log(tables.data);
 
-// console.log(matches.matches);
-// console.log(countryData.groups)
-
-// matches.matches.forEach(matchDayArr => matchDayArr.forEach(match => {
-//     if (match.team1 === "Russia" || match.team2 === "Russia") {
-//         console.log(match);
-//     }
-// }))
-},{"./scripts/country_data":3,"./scripts/group_tables":5,"./scripts/info_box":6,"./scripts/matches":7}],2:[function(require,module,exports){
+},{"./scripts/country_data":3,"./scripts/group_tables":5,"./scripts/info_box":6,"./scripts/matches":7,"./scripts/schedule":8}],2:[function(require,module,exports){
 //! moment.js
 
 ;(function (global, factory) {
@@ -5073,10 +5065,6 @@ function getInfo(countryName) {
            [countryScore, opponent, oppScore] = [matchInfo.score2, matchInfo.team1, matchInfo.score1]; 
         }
         
-        if (matchInfo.timezone == undefined) {
-            console.log(matchInfo);
-        }
-        
         //find local user time of match with moment.js
         let utc = matchInfo.timezone.split('+')[1];
         let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
@@ -5225,8 +5213,6 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
     this.team2 = team2;
     this.score1 = score1;
     this.score2 = score2;
-    // this.goals1 = [goals1];
-    // this.goals2 = [goals2];
     this.stadium = stadium;
     this.city = city;
     this.timezone = timezone;
@@ -5234,13 +5220,6 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
     this.goals1 = goals1;
     this.goals2 = goals2;
 }
-
-// let match1Russia = {
-//     name: 'Gazinsky',
-//     minute: 12,
-//     score1: 1,
-//     score2: 0,
-// }
 
 //Matchday 1
 const match1 = new Match(1, '2018-06-14', '18:00', 'Russia', 'Saudi Arabia', 5, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "SDY1N-IJOA8", goals.match1.goals1, goals.match1.goals2);
@@ -5353,4 +5332,56 @@ const matchDay15 = [match45, match46, match47, match48];
 const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12];
 
 module.exports.matches = matches;
-},{"./country_data":3,"./goals":4}]},{},[1]);
+},{"./country_data":3,"./goals":4}],8:[function(require,module,exports){
+const matchData = require('./matches');
+const moment = require('moment');
+let countryData = require('./country_data');
+
+const matches = matchData.matches;
+
+matches.forEach(matchDayArr => {
+    let element = `
+    <div class="matchday">
+        <div class="matchday__date">
+            <p>${matchDayArr[0].date}</p>
+        </div>
+    `;
+    matchDayArr.forEach(match => {
+        //format country name to match variable name in country_data.js file and then grab country info
+        let formatName1 = match.team1[0].toLowerCase() + match.team1.substring(1).replace(' ', '');
+        let image1 = countryData.teams[formatName1].images[0];
+
+        let formatName2 = match.team2[0].toLowerCase() + match.team2.substring(1).replace(' ', '');
+        let image2 = countryData.teams[formatName2].images[0];
+
+        element += `
+        <div class="matchday__match match">
+            <div class="match__info">
+                <p>${match.time}</p>
+                <p>${match.stadium}</p>
+                <p>${match.city}</p>
+            </div>
+            <div class="match__teams">
+                <p>${match.team1}</p>
+                <div class="match__teams--image">
+                    <img src=${image1}>
+                </div>
+                <div class="match__teams--score">
+                    <p>Full-time</p>
+                    <p>${match.score1} - ${match.score2}</p>
+                </div>
+                <div class="match__teams--image">
+                    <img src=${image2}>
+                </div>
+                <p>${match.team2}</p> 
+            </div>
+        </div>        
+        `;
+    });
+    element += `
+    </div>
+    `;
+
+    document.querySelector('.schedule').insertAdjacentHTML('beforeEnd', element);
+});
+},{"./country_data":3,"./matches":7,"moment":2}]},{},[1]);

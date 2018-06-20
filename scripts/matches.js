@@ -14,8 +14,6 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
     this.team2 = team2;
     this.score1 = score1;
     this.score2 = score2;
-    // this.goals1 = [goals1];
-    // this.goals2 = [goals2];
     this.stadium = stadium;
     this.city = city;
     this.timezone = timezone;
@@ -23,13 +21,6 @@ function Match(num, date, time, team1, team2, score1, score2, stadium, city, tim
     this.goals1 = goals1;
     this.goals2 = goals2;
 }
-
-// let match1Russia = {
-//     name: 'Gazinsky',
-//     minute: 12,
-//     score1: 1,
-//     score2: 0,
-// }
 
 //Matchday 1
 const match1 = new Match(1, '2018-06-14', '18:00', 'Russia', 'Saudi Arabia', 5, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "SDY1N-IJOA8", goals.match1.goals1, goals.match1.goals2);

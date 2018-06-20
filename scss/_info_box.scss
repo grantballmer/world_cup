@@ -1,0 +1,120 @@
+.info {
+    width: 600px;
+    height: 250px;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 0;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border: 1px solid black;
+    z-index: 2;
+    background-color: white;
+    
+    &__bottom { 
+        top: auto;
+        bottom: 0;
+    }
+    
+    &__right {
+        left: auto;
+        right: 100%;
+    }
+
+    &__name {
+        width: 100%;
+        height: 10%;
+        @include flex(center, flex-end);
+
+        p {
+            font-weight: 700;
+            margin-left: 7px;
+        }
+    }
+
+    &__row {
+        height: 37%;
+        margin: 1% 0;
+        @include flex(center, center);
+        
+        img {
+            max-height: 100%;
+        }
+    }
+
+    &__match {
+        width: 48%;
+        height: 100%;
+        margin: 0 5px;
+        padding: 3px;
+        border-radius: 8px;
+        border: .5px solid black;
+        @include flex(center, center);
+        flex-direction: column;
+        
+        &--date {
+            @include flex(center, center);
+            font-size: .6rem;
+            p {margin: 0 5px};
+        }
+    }
+    
+    .score__row {
+        height: 50%;
+        width: 100%;
+        font-size: .7rem;
+        font-weight: 700;
+        @include flex(space-around, center);
+    
+        & * {
+            max-height: 100%;
+            max-width: 20%;
+        }
+    }
+    
+    &__details {
+        height: 46%;
+        width: 100%;
+        @include flex(center, center);
+        
+        &--video {
+            height: 100%;
+            width: 50%;
+            @include flex(center, center);
+            
+            img, a {
+                height: 100%;
+                cursor: pointer;
+            }
+            
+        }
+        
+        &--scorers {
+            height: 100%;
+            width: 50%;
+            @include flex(flex-start, center);
+            flex-direction: column;
+            text-align: center;
+            
+            h2 {
+                width: 50%;
+                border-bottom: 1px solid black;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.scorers {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    
+    p {grid-column: span 1;}
+    
+    &__name {grid-column: span 2;}
+}
