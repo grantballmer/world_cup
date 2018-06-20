@@ -79,27 +79,39 @@ function getInfo(countryName) {
     // let formatName = countryName.toLowerCase().replace(' ', '-');
     
     function createScorersInfo() {
+        //format country name to match variable name in country_data.js file and then grab country info
         let formatForVariable = countryName[0].toLowerCase() + countryName.substring(1).replace(' ', '');
         let country = countryData.teams[formatForVariable];
-        let scorerLength = Object.keys(country.scorers).length;
-        let element = `<div class="scorer-row">`;
+        
+        //need to grab and sort order of country's scorers to display top scorers
+        let scorersArray = [];
         for (let player in country.scorers) {
-            let playerElement = `
-            <p>${player} ${country.scorers[player]}</p>
-            `;
-            element += playerElement;
+            scorersArray.push([player, country.scorers[player]]);
         }
-
-        element += `</div>`
-        console.log(element);
-        // let element = `
-        // <div class="scorer-row">
-        //     <p>1. Person</p>
-        //     <p>2. Person 2</p>
-        // </div>`
+        scorersArray.sort((a, b) =>  b[1] - a[1]);
+        
+        //create top scorers element and populate it with country's scorers information 
+        let element = `
+        <div class="scorers">
+        `;
+        
+        scorersArray.forEach((playerArr, index) => {
+            let playerElement = `
+            
+                <p>${index + 1})</p> 
+                <p class="scorers__name">${playerArr[0]}</p> 
+                <p>${playerArr[1]}</p>
+            
+                    
+            `;
+            
+            element += playerElement;
+        });
+        element += `</div>`;
+        return element;
     }
 
-    createScorersInfo();
+    let scorerElement = createScorersInfo();
 
     let infoBox = `
     <div class="info__name">
@@ -130,11 +142,7 @@ function getInfo(countryName) {
             </div>
             <div class="info__details--scorers">
                 <h2>Top Scorers</h2>
-                <div class="scorer-row">
-                    <p>1. Person</p>
-                    <p>2. Person 2</p>
-                </div>
-                
+                ${scorerElement}
             </div>
         </div>
         

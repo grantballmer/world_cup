@@ -89,7 +89,7 @@ const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, moroc
 , iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
 poland, senegal, colombia, japan};
 
-// let teamsArr = [];
+// let teamsArr = {};
 // groups.forEach(group => group.forEach(team => teamsArr.push(team)));
 
 // console.log(teams, teamsArr);
@@ -114,7 +114,7 @@ function updateTeamData(team,teamScore, oppScore, goals) {
         goals.forEach(goal => {
             let scorerName = goal.name;
             team.scorers.hasOwnProperty(scorerName) ? team.scorers[scorerName] += 1 : team.scorers[scorerName] = 1;
-        }) 
+        });
     }
 }
 
@@ -126,9 +126,9 @@ matches.forEach(matchDayArr => matchDayArr.forEach(match => {
             updateTeamData(team, match.score2, match.score1, match.goals2);
         }
     }));
-}))
+}));
 
 module.exports = {
     groups,
     teams
-}
+};

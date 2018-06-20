@@ -1,7 +1,8 @@
 let countryData = require('./country_data');
-let goals = require('./goals');
+let matchGoals = require('./goals');
 
 let teams = countryData.groups;
+let goals = matchGoals.matches;
 
 // goals.match1.goals1.forEach(goal => console.log(goal));
 
@@ -65,9 +66,9 @@ const match14 = new Match(14, '2018-06-18', '21:00', 'Tunisia', 'England', 1, 2,
 const matchDay5 = [match12, match13, match14];
 
 //Matchday 6
-const match15 = new Match(15, '2018-06-19', '15:00', 'Colombia', 'Japan', null, null, 'Mordovia Arena', 'Saransk', 'UTC+3', null);
-const match16 = new Match(16, '2018-06-19', '18:00', 'Poland', 'Senegal', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
-const match17 = new Match(17, '2018-06-19', '21:00', 'Russia', 'Egypt', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
+const match15 = new Match(15, '2018-06-19', '15:00', 'Colombia', 'Japan', 1, 2, 'Mordovia Arena', 'Saransk', 'UTC+3', 'y4SeAfCg7-o', goals.match15.goals1, goals.match15.goals2);
+const match16 = new Match(16, '2018-06-19', '18:00', 'Poland', 'Senegal', 1, 2, 'Spartak Stadium', 'Moscow', 'UTC+3', 'SXkg_12ukOk', goals.match16.goals1, goals.match16.goals2);
+const match17 = new Match(17, '2018-06-19', '21:00', 'Russia', 'Egypt', 3, 1, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', 'AygUlfmQgBs', goals.match17.goals1, goals.match17.goals2);
 
 const matchDay6 = [match15, match16, match17];
 
@@ -106,6 +107,38 @@ const match32 = new Match(32, '2018-06-24', '21:00', 'Poland', 'Colombia', null,
 
 const matchDay11 = [match30, match31, match32];
 
-const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11];
+//Matchday 12
+const match33 = new Match(33, '2018-06-25', '17:00', 'Saudi Arabia', 'Egypt', null, null, 'Volgograd Arena', 'Volgograd', 'UTC+3', null);
+const match34 = new Match(34, '2018-06-25', '18:00', 'Uruguay', 'Russia', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
+const match35 = new Match(35, '2018-06-25', '21:00', 'Iran', 'Portugal', null, null, 'Mordovia Arena', 'Saransk', 'UTC+3', null);
+const match36 = new Match(36, '2018-06-25', '20:00', 'Spain', 'Morocco', null, null, 'Kaliningrad Stadium', 'Kaliningrad', 'UTC+2', null);
+
+const matchDay12 = [match33, match34, match35, match36];
+
+//Matchday 13
+const match37 = new Match(37, '2018-06-26', '17:00', 'Denmark', 'France', null, null, 'Luzhniki Stadium', 'Moscow', 'UTC+3', null);
+const match38 = new Match(38, '2018-06-26', '17:00', 'Australia', 'Peru', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
+const match39 = new Match(39, '2018-06-26', '21:00', 'Nigeria', 'Argentina', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
+const match40 = new Match(40, '2018-06-26', '21:00', 'Iceland', 'Croatia', null, null, 'Rostov Arena', 'Moscow', 'UTC+3', null);
+
+const matchDay13 = [match37, match38, match39, match40];
+
+//Matchday 14
+const match41 = new Match(41, '2018-06-27', '17:00', 'South Korea', 'Germany', null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
+const match42 = new Match(42, '2018-06-27', '19:00', 'Mexico', 'Sweden', null, null, 'Ekaterinburg Arena', 'Ekaterinburg', 'UTC+5', null);
+const match43 = new Match(43, '2018-06-27', '21:00', 'Serbia', 'Brazil', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
+const match44 = new Match(44, '2018-06-27', '21:00', 'Switzerland', 'Costa Rica', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+
+const matchDay14 = [match41, match42, match43, match44];
+
+//Matchday 15
+const match45 = new Match(45, '2018-06-28', '17:00', 'Japan', 'Poland', null, null, 'Volgograd Arena', 'Volgograd', 'UTC+3', null);
+const match46 = new Match(46, '2018-06-28', '18:00', 'Senegal', 'Colombia', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
+const match47 = new Match(47, '2018-06-28', '20:00', 'England', 'Belgium', null, null, 'Kaliningrad Stadium', 'Kaliningrad', 'UTC+2', null);
+const match48 = new Match(48, '2018-06-28', '21:00', 'Panama', 'Tunisia', null, null, 'Mordovia Arena', 'Saransk', 'UTC+3', null);
+
+const matchDay15 = [match45, match46, match47, match48];
+
+const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12];
 
 module.exports.matches = matches;
