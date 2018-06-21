@@ -730,9 +730,26 @@ nav {
 .matchup {
   width: 100%;
   height: 16%;
+  position: relative;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
+}
+
+.matchup__top {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.matchup__bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.matchup__right {
+  right: 0;
 }
 
 .round__first {
