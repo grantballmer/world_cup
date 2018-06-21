@@ -37,7 +37,6 @@
     &__row {
         height: 35%;
         margin: 1% 0;
-        border: 1px solid green;
         @include flex(center, center);
         
         img {
@@ -78,7 +77,6 @@
     &__details {
         height: 46%;
         width: 100%;
-        border: 1px solid red;
         @include flex(center, center);
         
         &--video {
