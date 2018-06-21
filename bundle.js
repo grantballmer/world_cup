@@ -4535,67 +4535,67 @@ function Team(name, mp, w, d, l, gf, ga, gd, pts, imageSm, imageLg, scorers) {
 }
 
 //group a
-let russia = new Team('Russia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/russia.png', '../assets/large/russia.svg', {});
-let saudiArabia = new Team('Saudi Arabia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/saudi-arabia.png', '../assets/large/saudi-arabia.svg', {});
-let egypt = new Team('Egypt', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/egypt.png', '../assets/large/egypt.svg', {});
-let uruguay = new Team('Uruguay', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/uruguay.png', '../assets/large/uruguay.svg', {});
+let russia = new Team('Russia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/russia.png', './assets/large/russia.svg', {});
+let saudiArabia = new Team('Saudi Arabia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/saudi-arabia.png', './assets/large/saudi-arabia.svg', {});
+let egypt = new Team('Egypt', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/egypt.png', './assets/large/egypt.svg', {});
+let uruguay = new Team('Uruguay', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/uruguay.png', './assets/large/uruguay.svg', {});
 
 const groupA = [russia, saudiArabia, egypt, uruguay];
 
 //group b
-let iran = new Team('Iran', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/iran.png', '..assets/large/iran.svg', {});
-let spain = new Team('Spain', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/spain.png', '..assets/large/spain.svg', {});
-let portugal = new Team('Portugal', 0, 0, 0, 0, 0, 0, 0, 0,  '../assets/small/portugal.png', '..assets/large/portugal.svg', {});
-let morocco = new Team('Morocco', 0, 0, 0, 0, 0, 0, 0, 0,  '../assets/small/morocco.png', '..assets/large/morcco.svg', {});
+let iran = new Team('Iran', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/iran.png', '..assets/large/iran.svg', {});
+let spain = new Team('Spain', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/spain.png', '..assets/large/spain.svg', {});
+let portugal = new Team('Portugal', 0, 0, 0, 0, 0, 0, 0, 0,  './assets/small/portugal.png', '..assets/large/portugal.svg', {});
+let morocco = new Team('Morocco', 0, 0, 0, 0, 0, 0, 0, 0,  './assets/small/morocco.png', '..assets/large/morcco.svg', {});
 
 const groupB = [iran, spain, portugal, morocco];
 
 //group c
-let france = new Team('France', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/france.png', '../assets/large/france.svg', {});
-let australia = new Team('Australia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/australia.png', '../assets/large/australia.svg', {});
-let peru = new Team('Peru', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/peru.png', '../assets/large/peru.svg', {});
-let denmark = new Team('Denmark', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/denmark.png', '../assets/large/denmark.svg', {});
+let france = new Team('France', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/france.png', './assets/large/france.svg', {});
+let australia = new Team('Australia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/australia.png', './assets/large/australia.svg', {});
+let peru = new Team('Peru', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/peru.png', './assets/large/peru.svg', {});
+let denmark = new Team('Denmark', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/denmark.png', './assets/large/denmark.svg', {});
 
 
 const groupC = [france, australia, peru, denmark];
 
 //group d
-let argentina = new Team('Argentina', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/argentina.png', '../assets/large/argentina.svg', {});
-let iceland = new Team('Iceland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/iceland.png', '../assets/large/iceland.svg', {});
-let croatia = new Team('Croatia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/croatia.png', '../assets/large/croatia.svg', {});
-let nigeria = new Team('Nigeria', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/nigeria.png', '../assets/large/nigeria.svg', {});
+let argentina = new Team('Argentina', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/argentina.png', './assets/large/argentina.svg', {});
+let iceland = new Team('Iceland', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/iceland.png', './assets/large/iceland.svg', {});
+let croatia = new Team('Croatia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/croatia.png', './assets/large/croatia.svg', {});
+let nigeria = new Team('Nigeria', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/nigeria.png', './assets/large/nigeria.svg', {});
 
 const groupD = [argentina, iceland, croatia, nigeria];
 
 //group e
-let brazil = new Team('Brazil', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/brazil.png', '../assets/large/brazil.svg', {});
-let switzerland = new Team('Switzerland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/switzerland.png', '../assets/large/switzerland.svg', {});
-let costaRica = new Team('Costa Rica', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/costa-rica.png', '../assets/large/costa-rica.svg', {});
-let serbia = new Team('Serbia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/serbia.png', '../assets/large/serbia.svg', {});
+let brazil = new Team('Brazil', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/brazil.png', './assets/large/brazil.svg', {});
+let switzerland = new Team('Switzerland', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/switzerland.png', './assets/large/switzerland.svg', {});
+let costaRica = new Team('Costa Rica', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/costa-rica.png', './assets/large/costa-rica.svg', {});
+let serbia = new Team('Serbia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/serbia.png', './assets/large/serbia.svg', {});
 
 const groupE = [brazil, switzerland, costaRica, serbia];
 
 //group f
-let germany = new Team('Germany', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/germany.png', '../assets/large/germany.svg', {});
-let mexico = new Team('Mexico', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/mexico.png', '../assets/large/mexico.svg', {});
-let sweden = new Team('Sweden', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/sweden.png', '../assets/large/sweden.svg', {});
-let southKorea = new Team('South Korea', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/south-korea.png', '../assets/large/south-korea.svg', {});
+let germany = new Team('Germany', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/germany.png', './assets/large/germany.svg', {});
+let mexico = new Team('Mexico', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/mexico.png', './assets/large/mexico.svg', {});
+let sweden = new Team('Sweden', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/sweden.png', './assets/large/sweden.svg', {});
+let southKorea = new Team('South Korea', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/south-korea.png', './assets/large/south-korea.svg', {});
 
 const groupF = [germany, mexico, sweden, southKorea];
 
 //group g
-let belgium = new Team('Belgium', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/belgium.png', '../assets/large/belgium.svg', {});
-let panama = new Team('Panama', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/panama.png', '../assets/large/panama.svg', {});
-let tunisia = new Team('Tunisia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/tunisia.png', '../assets/large/tunisia.svg', {});
-let england = new Team('England', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/england.png', '../assets/large/england.svg', {});
+let belgium = new Team('Belgium', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/belgium.png', './assets/large/belgium.svg', {});
+let panama = new Team('Panama', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/panama.png', './assets/large/panama.svg', {});
+let tunisia = new Team('Tunisia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/tunisia.png', './assets/large/tunisia.svg', {});
+let england = new Team('England', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/england.png', './assets/large/england.svg', {});
 
 const groupG = [belgium, panama, tunisia, england];
 
 //group h
-let poland = new Team('Poland', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/poland.png', '../assets/large/poland.svg', {});
-let senegal = new Team('Senegal', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/senegal.png', '../assets/large/senegal.svg', {});
-let colombia = new Team('Colombia', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/colombia.png', '../assets/large/colombia.svg', {});
-let japan = new Team('Japan', 0, 0, 0, 0, 0, 0, 0, 0, '../assets/small/japan.png', '../assets/large/japan.svg', {});
+let poland = new Team('Poland', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/poland.png', './assets/large/poland.svg', {});
+let senegal = new Team('Senegal', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/senegal.png', './assets/large/senegal.svg', {});
+let colombia = new Team('Colombia', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/colombia.png', './assets/large/colombia.svg', {});
+let japan = new Team('Japan', 0, 0, 0, 0, 0, 0, 0, 0, './assets/small/japan.png', './assets/large/japan.svg', {});
 
 const groupH = [poland, senegal, colombia, japan];
 
@@ -4918,6 +4918,24 @@ let matches = {
         ], 
         goals2: [
             {name: "Mohamed Salah", minute: 73},
+        ]
+    },
+    match18 : {
+        goals1: [
+            {name: "Cristiano Ronaldo", minute: 4}
+        ], 
+        goals2: []
+    },
+    match19 : {
+        goals1: [
+            {name: "Luis Suárez", minute: 23}
+        ], 
+        goals2: []
+    },
+    match20 : {
+        goals1: [], 
+        goals2: [
+            {name: "Diego Costa", minute: 54}
         ]
     }
 };
@@ -5263,9 +5281,9 @@ const match17 = new Match(17, '2018-06-19', '21:00', 'Russia', 'Egypt', 3, 1, 'S
 const matchDay6 = [match15, match16, match17];
 
 //Matchday 7 
-const match18 = new Match(18, '2018-06-20', '15:00', 'Portugal', 'Morocco', null, null, 'Luzhniki Stadium', 'Moscow', 'UTC+3', null);
-const match19 = new Match(19, '2018-06-20', '18:00', 'Uruguay', 'Saudi Arabia', null, null, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', null);
-const match20 = new Match(20, '2018-06-20', '21:00', 'Iran', 'Spain', null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
+const match18 = new Match(18, '2018-06-20', '15:00', 'Portugal', 'Morocco', 1, 0, 'Luzhniki Stadium', 'Moscow', 'UTC+3', "sEtVNlzYAqQ", goals.match18.goals1, goals.match18.goals2);
+const match19 = new Match(19, '2018-06-20', '18:00', 'Uruguay', 'Saudi Arabia', 1, 0, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', "ZxEMQTAGYzI", goals.match19.goals1, goals.match19.goals2);
+const match20 = new Match(20, '2018-06-20', '21:00', 'Iran', 'Spain', 0, 1, 'Kazan Arena', 'Kazan', 'UTC+3', "_3C6DK8n0mQ", goals.match20.goals1, goals.match20.goals2);
 
 const matchDay7 = [match18, match19, match20];
 
@@ -5329,7 +5347,7 @@ const match48 = new Match(48, '2018-06-28', '21:00', 'Panama', 'Tunisia', null, 
 
 const matchDay15 = [match45, match46, match47, match48];
 
-const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12];
+const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15];
 
 module.exports.matches = matches;
 },{"./country_data":3,"./goals":4}],8:[function(require,module,exports){
@@ -5340,10 +5358,15 @@ let countryData = require('./country_data');
 const matches = matchData.matches;
 
 matches.forEach(matchDayArr => {
+    //find local user time of match with moment.js
+        // let utc = matchInfo.timezone.split('+')[1];
+        // let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
+    let formattedDate = moment(matchDayArr[0].date).format('ll');
+    
     let element = `
     <div class="matchday">
         <div class="matchday__date">
-            <p>${matchDayArr[0].date}</p>
+            <p>${formattedDate}</p>
         </div>
     `;
     matchDayArr.forEach(match => {
@@ -5353,27 +5376,44 @@ matches.forEach(matchDayArr => {
 
         let formatName2 = match.team2[0].toLowerCase() + match.team2.substring(1).replace(' ', '');
         let image2 = countryData.teams[formatName2].images[0];
+        
+        //find local user time of match with moment.js
+        let utc = match.timezone.split('+')[1];
+        let newTime = moment(`${match.date} ${match.time}+0${utc}`).format('LT');
+        //make a date that can account for some matches taking place at 12am or 3am the following day
+        let newDate = moment(`${match.date} ${match.time}+0${utc}`).format('ll').split(',')[0];
+        
+        let scoreElement = `
+            <p>Full-time</p>
+            <p>${match.score1} - ${match.score2}</p>
+        `;
+        
+        let upComingMatch = `
+        <p>${newDate}</p>
+        <p>${newTime}</p>
+        `;
+        
+        match.score1 === null ? scoreElement = upComingMatch : null;
 
         element += `
         <div class="matchday__match match">
             <div class="match__info">
-                <p>${match.time}</p>
+                <p>${formattedDate} ${match.time} - Local Time</p>
                 <p>${match.stadium}</p>
                 <p>${match.city}</p>
             </div>
             <div class="match__teams">
-                <p>${match.team1}</p>
-                <div class="match__teams--image">
+                <p class="match__teams--team">${match.team1}</p>
+                <div class="match__teams--image flag1">
                     <img src=${image1}>
                 </div>
                 <div class="match__teams--score">
-                    <p>Full-time</p>
-                    <p>${match.score1} - ${match.score2}</p>
+                    ${scoreElement}
                 </div>
-                <div class="match__teams--image">
+                <div class="match__teams--image flag2">
                     <img src=${image2}>
                 </div>
-                <p>${match.team2}</p> 
+                <p class="match__teams--team">${match.team2}</p> 
             </div>
         </div>        
         `;

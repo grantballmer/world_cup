@@ -5,10 +5,15 @@ let countryData = require('./country_data');
 const matches = matchData.matches;
 
 matches.forEach(matchDayArr => {
+    //find local user time of match with moment.js
+        // let utc = matchInfo.timezone.split('+')[1];
+        // let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
+    let formattedDate = moment(matchDayArr[0].date).format('ll');
+    
     let element = `
     <div class="matchday">
         <div class="matchday__date">
-            <p>${matchDayArr[0].date}</p>
+            <p>${formattedDate}</p>
         </div>
     `;
     matchDayArr.forEach(match => {
@@ -18,27 +23,44 @@ matches.forEach(matchDayArr => {
 
         let formatName2 = match.team2[0].toLowerCase() + match.team2.substring(1).replace(' ', '');
         let image2 = countryData.teams[formatName2].images[0];
+        
+        //find local user time of match with moment.js
+        let utc = match.timezone.split('+')[1];
+        let newTime = moment(`${match.date} ${match.time}+0${utc}`).format('LT');
+        //make a date that can account for some matches taking place at 12am or 3am the following day
+        let newDate = moment(`${match.date} ${match.time}+0${utc}`).format('ll').split(',')[0];
+        
+        let scoreElement = `
+            <p>Full-time</p>
+            <p>${match.score1} - ${match.score2}</p>
+        `;
+        
+        let upComingMatch = `
+        <p>${newDate}</p>
+        <p>${newTime}</p>
+        `;
+        
+        match.score1 === null ? scoreElement = upComingMatch : null;
 
         element += `
         <div class="matchday__match match">
             <div class="match__info">
-                <p>${match.time}</p>
+                <p>${formattedDate} ${match.time} - Local Time</p>
                 <p>${match.stadium}</p>
                 <p>${match.city}</p>
             </div>
             <div class="match__teams">
-                <p>${match.team1}</p>
-                <div class="match__teams--image">
+                <p class="match__teams--team">${match.team1}</p>
+                <div class="match__teams--image flag1">
                     <img src=${image1}>
                 </div>
                 <div class="match__teams--score">
-                    <p>Full-time</p>
-                    <p>${match.score1} - ${match.score2}</p>
+                    ${scoreElement}
                 </div>
-                <div class="match__teams--image">
+                <div class="match__teams--image flag2">
                     <img src=${image2}>
                 </div>
-                <p>${match.team2}</p> 
+                <p class="match__teams--team">${match.team2}</p> 
             </div>
         </div>        
         `;

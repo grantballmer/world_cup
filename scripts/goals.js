@@ -266,6 +266,24 @@ let matches = {
         goals2: [
             {name: "Mohamed Salah", minute: 73},
         ]
+    },
+    match18 : {
+        goals1: [
+            {name: "Cristiano Ronaldo", minute: 4}
+        ], 
+        goals2: []
+    },
+    match19 : {
+        goals1: [
+            {name: "Luis Suárez", minute: 23}
+        ], 
+        goals2: []
+    },
+    match20 : {
+        goals1: [], 
+        goals2: [
+            {name: "Diego Costa", minute: 54}
+        ]
     }
 };
 

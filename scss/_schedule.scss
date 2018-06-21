@@ -39,6 +39,10 @@
         @include flex(center, center);
         flex-direction: column;
         height: 100%;
+        width: 19%;
+        text-align: center;
+        margin-left: 3%;
+        font-size: .85rem;
     }
 
     &__teams {
@@ -48,12 +52,17 @@
         margin: 0 auto;
         font-weight: 700;
 
+        &--team {
+            width: 20%;
+            text-align: center;
+        }
+
         &--image {
             height: 100%;
-            width: auto;
+            width: 30%;
             margin: 0 10px;
             padding: 10px;
-            
+            @include flex(center, center);
             img {
                 max-height: 100%;
             }
@@ -63,6 +72,8 @@
             @include flex(center, center);
             flex-direction: column;
             height: 100%;
+            width: 20%;
+            text-align: center;
             margin: 0 10px;
         }
     }
