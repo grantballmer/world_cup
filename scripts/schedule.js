@@ -50,17 +50,21 @@ matches.forEach(matchDayArr => {
                 <p>${match.city}</p>
             </div>
             <div class="match__teams">
-                <p class="match__teams--team">${match.team1}</p>
-                <div class="match__teams--image flag1">
-                    <img src=${image1}>
-                </div>
+                <div class="match__teams--wrapper">
+                    <p class="match__teams--team match__teams--team__left">${match.team1}</p>
+                    <div class="match__teams--image flag__left">
+                        <img src=${image1}>
+                    </div>
+                </div>        
                 <div class="match__teams--score">
                     ${scoreElement}
                 </div>
-                <div class="match__teams--image flag2">
-                    <img src=${image2}>
-                </div>
-                <p class="match__teams--team">${match.team2}</p> 
+                <div class="match__teams--wrapper">
+                    <div class="match__teams--image flag2">
+                        <img src=${image2}>
+                    </div>
+                    <p class="match__teams--team">${match.team2}</p>
+                </div>    
             </div>
         </div>        
         `;

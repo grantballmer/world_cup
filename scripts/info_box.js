@@ -3,7 +3,7 @@ const countryData = require('./country_data');
 const moment = require('moment');
 
 const matches = matchData.matches;
-const countryElements = document.querySelectorAll('[data-country');
+const infoElements = document.querySelectorAll('[data-country');
 
 function getInfo(countryName) {
     //initialize variables
@@ -158,8 +158,14 @@ function getInfo(countryName) {
 
 }
 
-countryElements.forEach(country => {
+infoElements.forEach(country => {
     let countryName = country.dataset.country; 
     let createdInfoBox = getInfo(countryName);
     country.insertAdjacentHTML('beforeend', createdInfoBox);
 });
+
+let countryElements = document.querySelectorAll('.group__row--country');
+
+countryElements.forEach(country => country.addEventListener('click', function() {
+    this.firstChild.style.display = 'none';
+}));

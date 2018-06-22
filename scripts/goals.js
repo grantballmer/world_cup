@@ -284,6 +284,28 @@ let matches = {
         goals2: [
             {name: "Diego Costa", minute: 54}
         ]
+    },
+    match21 : {
+        goals1: [
+           {name: "Christian Eriksen", minute: 7} 
+        ], 
+        goals2: [
+            {name: "Mile Jedinak", minute: 38}
+        ]
+    },
+    match22 : {
+        goals1: [
+           {name: "Kylian Mbappé ", minute: 34} 
+        ], 
+        goals2: []
+    },
+    match23 : {
+        goals1: [], 
+        goals2: [
+           {name: "Ante Rebic", minute: 53},
+           {name: "Luka Modric", minute: 80},
+           {name: "Ivan Rakitic", minute: 90},
+        ]
     }
 };
 

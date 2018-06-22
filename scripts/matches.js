@@ -71,9 +71,9 @@ const match20 = new Match(20, '2018-06-20', '21:00', 'Iran', 'Spain', 0, 1, 'Kaz
 const matchDay7 = [match18, match19, match20];
 
 //Matchday 8 
-const match21 = new Match(21, '2018-06-21', '16:00', 'Denmark', 'Australia', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
-const match22 = new Match(22, '2018-06-21', '20:00', 'France', 'Peru', null, null, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', null);
-const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match21 = new Match(21, '2018-06-21', '16:00', 'Denmark', 'Australia', 1, 1, 'Samara Arena', 'Samara', 'UTC+4', "24m_D5EFb-A", goals.match21.goals1, goals.match21.goals2);
+const match22 = new Match(22, '2018-06-21', '20:00', 'France', 'Peru',1, 0, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "9-QIE-xaueo", goals.match22.goals1, goals.match22.goals2);
+const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', 0, 3, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "hcM5n71XmBo", goals.match23.goals1, goals.match23.goals2);
 
 const matchDay8 = [match21, match22, match23];
 

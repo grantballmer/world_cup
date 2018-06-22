@@ -1,9 +1,12 @@
 nav {
-    height: 75px;
+    height: 50px;
     @include flex(center, center);
     background-color: $primary-blue;
     position: relative;
     z-index: 2;
+    @include tablet {
+        height: 75px;
+    }
 }
 
 .trophy__img {
@@ -16,48 +19,95 @@ nav {
 
 .nav__group {
     height: 100%;
-    width: 100px;
-    position: relative;
+    width: 40px;
+    // position: relative;
     @include flex(center, center);
     color: white;
     text-transform: capitalize;
     background-color: $dark-blue;
     border-left: 1px solid $border-blue;
     border-right: 1px solid $border-blue;
+    font-size: .6rem;
     // margin: 0 .5%;
+    @include wide-mobile {
+        width: 65px;
+    }
+    @include tablet {
+        width: 87px;
+        font-size: .9rem;
+        position: relative;
+    }
+    @include desktop {
+        width: 100px;
+        font-size: 1rem;
+    }
 
     &:hover .nav__group--table {
         display: block;
     }
 
     &:nth-of-type(5) {
-        margin: 0 5%;
+        width: 35px;
+        margin: 0 2%;
         border: none;
         background-color: transparent;
+        @include wide-mobile {
+            width: 50px;
+        }
+        @include tablet {
+            width: 87px;
+            margin: 0 3%;
+        }
+        @include desktop {
+            width: 100px;
+            margin: 0 5%;
+        }
     }
 
     p {margin: 0 3px;}
 
     &--table {
-        width: 500%;
-        height: 200px;
+        width: 85%;
+        height: 175px;
         display: none;
         padding: 10px;
         padding-top: 0;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: translateY(100%);
+        top: 50px;
+        left: 7.5%;
+        // bottom: 0;
+        // left: 0;
+        // transform: translateY(100%);
         border: 1px solid black;
         border-top: none;
         background-color: white;
         color: black;
-        font-size: .8rem;
+        font-size: .7rem;
+        z-index: 3;
+        @include wide-mobile {
+            width: 70%;
+            left: 15%;
+        }
+        @include tablet {
+            width: 500%;
+            height: 200px;
+            font-size: .8rem;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            transform: translateY(100%);
+        }
     }
 
     .toLeft {
         left: auto;
-        right: 0;
+        right: 7.5%;
+        @include wide-mobile {
+            right: 15%;
+        }
+        @include tablet {
+            right: 0;
+        }
     }
 }
 
@@ -91,13 +141,25 @@ nav {
         width: 15px;
         @include flex(center, center);
         margin-left: 15px;
-        font-size: .7rem;
+        font-size: .6rem;
+        @include tablet {
+            font-size: .62rem;
+        }
+        @include desktop {
+            font-size: .7rem;
+        }
 
         &:first-of-type {
             height: 100%;
-            min-width: 45%;
+            min-width: 35%;
             @include flex(flex-start, center);
             margin: 0;
+            @include tablet {
+               min-width: 42%; 
+            }
+            @include tablet {
+               min-width: 45%; 
+            }
         }
     }
 }

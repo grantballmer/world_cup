@@ -1,17 +1,29 @@
 .info {
-    width: 600px;
-    height: 250px;
+    width: 62vw;
+    height: 85vh;
     display: none;
     justify-content: flex-start;
     align-items: center;
-    padding: 5px 0;
+    margin-left: 2vw;
+    padding: 5px;
     flex-direction: column;
     position: absolute;
     top: 0;
     left: 100%;
     border: 1px solid black;
+    border-radius: 8px;
     z-index: 2;
     background-color: white;
+    box-shadow: 3px 1px 10px 2px rgba(0,0,0, 0.7);
+    
+    @include tablet {
+        width: 600px;
+        height: 250px; 
+        left: 100%;
+        margin-left: 0;
+        padding: 5px 0;
+        // border-radius: 0;
+    }
     
     &__bottom { 
         top: auto;
@@ -21,23 +33,63 @@
     &__right {
         left: auto;
         right: 100%;
+        margin-right: 2vw;
+        @include tablet {
+            margin-right: 0;
+        }
+    }
+    
+    &__middleTop {
+        transform: translateY(-27%);
+        @include tablet {
+            transform: translateY(0);
+        }
+    }
+    
+    &__middleBottom {
+        transform: translateY(27%);
+        @include tablet {
+            transform: translateY(0);
+        }
     }
 
     &__name {
         width: 100%;
         height: 10%;
-        @include flex(center, flex-end);
+        @include flex(center, center);
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+        }
+        
+        img {
+            order: 2;
+            @include tablet {
+                order: 1;
+            }
+         }
 
         p {
             font-weight: 700;
-            margin-left: 7px;
+            margin-left: 0px;
+            order: 1;
+            @include tablet {
+                order: 2;
+                margin-left: 7px;
+            }
         }
     }
 
     &__row {
         height: 35%;
         margin: 1% 0;
+        padding: 1.5%;
         @include flex(center, center);
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            padding: 0;
+        }
         
         img {
             max-height: 100%;
@@ -45,14 +97,19 @@
     }
 
     &__match {
-        width: 48%;
-        height: 100%;
-        margin: 0 5px;
+        width: 100%;
+        height: 48%;
+        margin: 5px 0;
         padding: 3px;
         border-radius: 8px;
         border: .5px solid black;
         @include flex(center, center);
         flex-direction: column;
+        @include tablet {
+            width: 48%;
+            height: 100%;
+            margin: 0 5px;
+        }
         
         &--date {
             @include flex(center, center);
@@ -78,11 +135,21 @@
         height: 46%;
         width: 100%;
         @include flex(center, center);
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+        }
         
         &--video {
-            height: 100%;
-            width: 50%;
+            height: 70%;
+            width: 100%;
+            margin: 5px;
             @include flex(center, center);
+            @include tablet {
+                height: 100%;
+                width: 50%;
+                margin: 0;
+            }
             
             img, a {
                 height: 100%;
@@ -92,11 +159,15 @@
         }
         
         &--scorers {
-            height: 100%;
-            width: 50%;
+            height: 30%;
+            width: 100%;
             @include flex(flex-start, center);
             flex-direction: column;
             text-align: center;
+            @include tablet {
+               height: 100%;
+                width: 50%; 
+            }
             
             h2 {
                 width: 50%;

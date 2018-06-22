@@ -4937,6 +4937,28 @@ let matches = {
         goals2: [
             {name: "Diego Costa", minute: 54}
         ]
+    },
+    match21 : {
+        goals1: [
+           {name: "Christian Eriksen", minute: 7} 
+        ], 
+        goals2: [
+            {name: "Mile Jedinak", minute: 38}
+        ]
+    },
+    match22 : {
+        goals1: [
+           {name: "Kylian Mbappé ", minute: 34} 
+        ], 
+        goals2: []
+    },
+    match23 : {
+        goals1: [], 
+        goals2: [
+           {name: "Ante Rebic", minute: 53},
+           {name: "Luka Modric", minute: 80},
+           {name: "Ivan Rakitic", minute: 90},
+        ]
     }
 };
 
@@ -5053,7 +5075,7 @@ const countryData = require('./country_data');
 const moment = require('moment');
 
 const matches = matchData.matches;
-const countryElements = document.querySelectorAll('[data-country');
+const infoElements = document.querySelectorAll('[data-country');
 
 function getInfo(countryName) {
     //initialize variables
@@ -5208,12 +5230,17 @@ function getInfo(countryName) {
 
 }
 
-countryElements.forEach(country => {
+infoElements.forEach(country => {
     let countryName = country.dataset.country; 
     let createdInfoBox = getInfo(countryName);
     country.insertAdjacentHTML('beforeend', createdInfoBox);
 });
 
+let countryElements = document.querySelectorAll('.group__row--country');
+
+countryElements.forEach(country => country.addEventListener('click', function() {
+    this.firstChild.style.display = 'none';
+}));
 },{"./country_data":3,"./matches":7,"moment":2}],7:[function(require,module,exports){
 let countryData = require('./country_data');
 let matchGoals = require('./goals');
@@ -5288,9 +5315,9 @@ const match20 = new Match(20, '2018-06-20', '21:00', 'Iran', 'Spain', 0, 1, 'Kaz
 const matchDay7 = [match18, match19, match20];
 
 //Matchday 8 
-const match21 = new Match(21, '2018-06-21', '16:00', 'Denmark', 'Australia', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
-const match22 = new Match(22, '2018-06-21', '20:00', 'France', 'Peru', null, null, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', null);
-const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match21 = new Match(21, '2018-06-21', '16:00', 'Denmark', 'Australia', 1, 1, 'Samara Arena', 'Samara', 'UTC+4', "24m_D5EFb-A", goals.match21.goals1, goals.match21.goals2);
+const match22 = new Match(22, '2018-06-21', '20:00', 'France', 'Peru',1, 0, 'Ekaterinburg Arena', 'Ekaterinburn', 'UTC+5', "9-QIE-xaueo", goals.match22.goals1, goals.match22.goals2);
+const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', 0, 3, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "hcM5n71XmBo", goals.match23.goals1, goals.match23.goals2);
 
 const matchDay8 = [match21, match22, match23];
 
@@ -5403,17 +5430,21 @@ matches.forEach(matchDayArr => {
                 <p>${match.city}</p>
             </div>
             <div class="match__teams">
-                <p class="match__teams--team">${match.team1}</p>
-                <div class="match__teams--image flag1">
-                    <img src=${image1}>
-                </div>
+                <div class="match__teams--wrapper">
+                    <p class="match__teams--team match__teams--team__left">${match.team1}</p>
+                    <div class="match__teams--image flag__left">
+                        <img src=${image1}>
+                    </div>
+                </div>        
                 <div class="match__teams--score">
                     ${scoreElement}
                 </div>
-                <div class="match__teams--image flag2">
-                    <img src=${image2}>
-                </div>
-                <p class="match__teams--team">${match.team2}</p> 
+                <div class="match__teams--wrapper">
+                    <div class="match__teams--image flag2">
+                        <img src=${image2}>
+                    </div>
+                    <p class="match__teams--team">${match.team2}</p>
+                </div>    
             </div>
         </div>        
         `;

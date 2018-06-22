@@ -39,32 +39,75 @@
         @include flex(center, center);
         flex-direction: column;
         height: 100%;
-        width: 19%;
+        width: 30%;
         text-align: center;
         margin-left: 3%;
-        font-size: .85rem;
+        font-size: .65rem;
+        @include wide-mobile {
+            width: 19%;
+        }
+        @include tablet {
+            font-size: .85rem;
+        }
     }
 
     &__teams {
         height: 100%;
-        width: 60%;
+        width: 55%;
         @include flex(center, center);
         margin: 0 auto;
         font-weight: 700;
+        font-size: .7rem;
+        @include wide-mobile {
+            width: 70%;
+        }
+        @include tablet {
+            font-size: 1rem;
+        }
+        
+        &--wrapper {
+            height: 100%;
+            width: 40%;
+            @include flex(space-around, center);
+            flex-direction: column;
+            
+            @include wide-mobile {
+                flex-direction: row;
+            }
+        }
 
         &--team {
-            width: 20%;
+            // width: 20%;
+            width: 100%;
             text-align: center;
+            @include wide-mobile {
+                width: 40%;
+            }
+            
+            &__left {
+                order: 2;
+                @include wide-mobile {
+                    order: 1;
+                }
+            }
         }
 
         &--image {
-            height: 100%;
-            width: 30%;
-            margin: 0 10px;
-            padding: 10px;
+            max-height: 75%;
+            // width: 30%;
+            width: 100%;
+            // margin: 0 10px;
+            padding: 5px;
             @include flex(center, center);
+            @include wide-mobile {
+                height: 100%;
+                width: 60%;
+            }
+            
+            
             img {
                 max-height: 100%;
+                max-width: 100%;
             }
         }
 
@@ -73,8 +116,16 @@
             flex-direction: column;
             height: 100%;
             width: 20%;
+            padding: 5px;
             text-align: center;
-            margin: 0 10px;
+            // margin: 0 10px;
         }
+    }
+}
+
+.flag__left {
+    order: 1;
+    @include wide-mobile {
+        order: 2;
     }
 }

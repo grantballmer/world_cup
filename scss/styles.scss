@@ -1,4 +1,4 @@
-$wide-mobile-width: 425px; 
+$wide-mobile-width: 550px; 
 $tablet-width: 812px;
 $desktop-width: 1024px;
 
@@ -48,8 +48,11 @@ $border-blue: #0B2E58;
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 75px;
+    padding-top: 50px;
     @include flex(center, center);
+    @include tablet {
+        padding-top: 75px;
+    }
 }
 
 .half {
@@ -79,14 +82,20 @@ $border-blue: #0B2E58;
 
 .group {
     width: 100%;
-    height: 20%;
-    padding: 1% 0;
+    height: 22%;
+    // padding-top: 2%;
+    padding-bottom: 0;
+    @include tablet {
+        padding: 1% 0;
+    }
     border-radius: 8px;
     border: 2px solid $primary-blue;
     position: relative;
-    font-size: .5rem;
+    font-size: .7rem;
     @include tablet {
+        position: relative;
         font-size: .65rem;
+        height: 20%;
     }
     @include desktop {
         font-size: .8rem;
@@ -96,8 +105,8 @@ $border-blue: #0B2E58;
     &__right {border-top-right-radius: 0px;}
 
     &__name {
-        width: 50%;
-        height: 20px;
+        width: 100%;
+        height: 15px;
         position: absolute;
         top: 0;
         @include flex(flex-start, center);
@@ -108,6 +117,14 @@ $border-blue: #0B2E58;
         transform: translateY(-100%);
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
+        font-size: .55rem;
+        @include wide-mobile {
+            width: 75%;
+            height: 20px;
+        }
+        @include tablet {
+            width: 50%;
+        }
 
         &--left {left: 0;}
         &--right {right: 0;}
@@ -116,14 +133,25 @@ $border-blue: #0B2E58;
     &__row {
         height: 48%;
         width: 100%;
-        position: relative;
+        // position: relative;
         @include flex(center, center);
+        flex-direction: column;
+        @include tablet {
+            position: relative;
+            flex-direction: row;
+        }
         border-radius: 8px;
     
         &--country {
-            width: 50%;
-            height: 100%;
-            position: relative;
+            width: 100%;
+            height: 50%;
+            text-align: center;
+            @include tablet {
+                position: relative;
+                width: 50%;
+                height: 100%;   
+            }
+            // position: relative;
             @include flex(center, center);
             flex-direction: column;
 
@@ -174,11 +202,11 @@ $border-blue: #0B2E58;
 .matchup {
     width: 100%;
     height: 16%;
-    position: relative;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-
+    position: relative;
+    
     &__top {
         position: absolute;
         top: 0;
@@ -193,7 +221,12 @@ $border-blue: #0B2E58;
     &__right {right: 0};
 }
 
-.round__first {margin-left: 15px;}
+.round__first {
+    margin-left: 5px;
+    @include tablet {
+        margin-left: 15px;
+    }
+}
 .round__second .matchup {height: 25%;}
 .round__third .matchup{height: 50%;}
 
@@ -235,7 +268,12 @@ $border-blue: #0B2E58;
 
     .round__first {
         margin-left: 0;
-        margin-right: 15px;
+        margin-right: 5px;
+            
+        @include tablet {
+            margin-left: 0;
+            margin-right: 15px;
+        }
     }
     .matchup {
         border-right: none;
