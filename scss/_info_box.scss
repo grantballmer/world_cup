@@ -56,10 +56,12 @@
     &__name {
         width: 100%;
         height: 10%;
+        padding: 5px 0;
         @include flex(center, center);
         flex-direction: column;
         @include tablet {
             flex-direction: row;
+            padding: 0;
         }
         
         img {
@@ -73,6 +75,7 @@
             font-weight: 700;
             margin-left: 0px;
             order: 1;
+            font-size: .8rem;
             @include tablet {
                 order: 2;
                 margin-left: 7px;
@@ -164,6 +167,7 @@
             @include flex(flex-start, center);
             flex-direction: column;
             text-align: center;
+            font-size: .7rem;
             @include tablet {
                height: 100%;
                 width: 50%; 
@@ -175,6 +179,13 @@
                 margin-bottom: 5px;
             }
         }
+    }
+}
+
+.toggleDisplay {
+    display: block;
+    @include tablet {
+        display: inherit;
     }
 }
 

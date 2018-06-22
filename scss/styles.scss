@@ -72,12 +72,15 @@ $border-blue: #0B2E58;
 }
 
 .wrapper__group {
-    width: 34%;
+    width: 49%;
     height: 100%;
     // padding: 3%;
     padding-bottom: 0;
     @include flex(space-around, center);
     flex-direction: column;
+    @include tablet {
+        width: 34%;
+    }
 }
 
 .group {
@@ -85,9 +88,6 @@ $border-blue: #0B2E58;
     height: 22%;
     // padding-top: 2%;
     padding-bottom: 0;
-    @include tablet {
-        padding: 1% 0;
-    }
     border-radius: 8px;
     border: 2px solid $primary-blue;
     position: relative;
@@ -96,6 +96,7 @@ $border-blue: #0B2E58;
         position: relative;
         font-size: .65rem;
         height: 20%;
+        // padding: 1% 0;
     }
     @include desktop {
         font-size: .8rem;
@@ -106,7 +107,7 @@ $border-blue: #0B2E58;
 
     &__name {
         width: 100%;
-        height: 15px;
+        height: 12px;
         position: absolute;
         top: 0;
         @include flex(flex-start, center);
@@ -118,25 +119,27 @@ $border-blue: #0B2E58;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
         font-size: .55rem;
-        @include wide-mobile {
-            width: 75%;
-            height: 20px;
-        }
         @include tablet {
             width: 50%;
+            height: 20px;
+            font-size: .7rem;
         }
 
         &--left {left: 0;}
-        &--right {right: 0;}
+        &--right {
+            justify-content: flex-end;
+            padding-right: 5px;
+            right: 0;
+        }
     }
 
     &__row {
-        height: 48%;
+        height: 50%;
         width: 100%;
         // position: relative;
         @include flex(center, center);
         flex-direction: column;
-        @include tablet {
+        @include wide-mobile {
             position: relative;
             flex-direction: row;
         }
@@ -146,17 +149,22 @@ $border-blue: #0B2E58;
             width: 100%;
             height: 50%;
             text-align: center;
+            // position: relative;
+            @include flex(center, center);
+            flex-direction: column;
+            font-size: .5rem;
+
             @include tablet {
                 position: relative;
                 width: 50%;
                 height: 100%;   
+                font-size: .7rem;
             }
-            // position: relative;
-            @include flex(center, center);
-            flex-direction: column;
 
             &:hover .info {
-                display: block;
+                @include tablet {
+                    display: block;  
+                }
             }
 
             img {
@@ -168,16 +176,16 @@ $border-blue: #0B2E58;
 }
 
 .country__image {
-    height: 48%;
+    height: 62%;
     width: auto;
     // width: 100%;
     @include flex(center, center);
     flex-direction: column;
     cursor: pointer;
 
-    &:hover .info {
-        display: flex;
-    }
+    // &:hover .info {
+    //     display: flex;
+    // }
 
     img {
         max-height: 100%;
@@ -185,18 +193,24 @@ $border-blue: #0B2E58;
     }
 }
 
-.round__wrapper {
-    width: 66%;
-    height: 100%;
-    @include flex(center, center);
-}
+// .round__wrapper {
+//     width: 66%;
+//     height: 100%;
+//     @include flex(center, center);
+// }
 
 .round {
-    width: 22%;
+    width: 17%;
     // width: 33.33%;
     height: 100%;
     @include flex(space-around, center);
     flex-direction: column;
+    font-size: .75rem;
+
+    @include tablet {
+        width: 22%;
+        font-size: 1rem;
+    }
 }
 
 .matchup {

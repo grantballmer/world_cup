@@ -5,6 +5,8 @@ const moment = require('moment');
 const matches = matchData.matches;
 const infoElements = document.querySelectorAll('[data-country');
 
+let countryElements = document.querySelectorAll('.group__row--country');
+
 function getInfo(countryName) {
     //initialize variables
     let prevMatch = false;
@@ -164,8 +166,7 @@ infoElements.forEach(country => {
     country.insertAdjacentHTML('beforeend', createdInfoBox);
 });
 
-let countryElements = document.querySelectorAll('.group__row--country');
-
-countryElements.forEach(country => country.addEventListener('click', function() {
-    this.firstChild.style.display = 'none';
+countryElements.forEach(element => element.addEventListener('click', function() {
+    if (window.innerWidth > 815) return;
+    this.querySelector('.info').classList.toggle('toggleDisplay');
 }));
