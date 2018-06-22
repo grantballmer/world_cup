@@ -3,11 +3,11 @@ const countryData = require('./country_data');
 const moment = require('moment');
 
 const matches = matchData.matches;
-const infoElements = document.querySelectorAll('[data-country');
+const infoElements = document.querySelectorAll('[data-country]');
 
 let countryElements = document.querySelectorAll('.group__row--country');
 
-window.addEventListener('load', function() {
+// window.addEventListener('load', function() {
     function getInfo(countryName) {
         //initialize variables
         let prevMatch = false;
@@ -171,4 +171,4 @@ window.addEventListener('load', function() {
         if (window.innerWidth > 815) return;
         this.querySelector('.info').classList.toggle('toggleDisplay');
     }));
-});
+// });

@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-// let teams = require('./scripts/country_data');
+
 let tables = require('./scripts/group_tables');
 let matches = require('./scripts/matches');
 const countryData = require('./scripts/country_data');
@@ -5075,11 +5075,11 @@ const countryData = require('./country_data');
 const moment = require('moment');
 
 const matches = matchData.matches;
-const infoElements = document.querySelectorAll('[data-country');
+const infoElements = document.querySelectorAll('[data-country]');
 
 let countryElements = document.querySelectorAll('.group__row--country');
 
-window.addEventListener('load', function() {
+// window.addEventListener('load', function() {
     function getInfo(countryName) {
         //initialize variables
         let prevMatch = false;
@@ -5243,7 +5243,7 @@ window.addEventListener('load', function() {
         if (window.innerWidth > 815) return;
         this.querySelector('.info').classList.toggle('toggleDisplay');
     }));
-});
+// });
 },{"./country_data":3,"./matches":7,"moment":2}],7:[function(require,module,exports){
 let countryData = require('./country_data');
 let matchGoals = require('./goals');
