@@ -761,6 +761,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: .6rem;
 }
 
 @media (min-width: 812px) {
@@ -768,6 +769,7 @@ nav {
     width: 48%;
     height: 100%;
     margin: 0 5px;
+    font-size: 1rem;
   }
 }
 
@@ -781,17 +783,23 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: .6rem;
+  font-size: .5rem;
 }
 
 .info__match--date p {
   margin: 0 5px;
 }
 
+@media (min-width: 550px) {
+  .info__match--date {
+    font-size: .6rem;
+  }
+}
+
 .info .score__row {
   height: 50%;
   width: 100%;
-  font-size: .58rem;
+  font-size: .53rem;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
