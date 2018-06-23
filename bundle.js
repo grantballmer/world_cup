@@ -4621,7 +4621,7 @@ function updateTeamData(team,teamScore, oppScore, goals) {
         team.draws ++;
         team.pts ++;
     }
-    if (teamScore > oppScore) {
+    else if (teamScore > oppScore) {
         team.wins ++; 
         team.pts += 3;
     } else {

@@ -94,6 +94,8 @@ $border-blue: #0B2E58;
     border-radius: 8px;
     border: 2px solid $primary-blue;
     position: relative;
+    background-color: rgb(23, 95, 182);
+    color: white;
     font-size: .7rem;
     @include tablet {
         position: relative;
@@ -181,12 +183,13 @@ $border-blue: #0B2E58;
 
 .eliminated {
 
-    & > p {
-        text-decoration: line-through;
-    }
+    // & > p {
+    //     text-decoration: line-through;
+    // }
 
     .country__image img {
-        filter: grayscale(100%);
+        opacity: .5;
+        // filter: grayscale(100%);
     }
 }
 

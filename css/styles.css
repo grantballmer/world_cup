@@ -850,6 +850,7 @@ nav {
   height: auto;
   width: 100%;
   margin-bottom: 3%;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1024,6 +1025,8 @@ nav {
   border-radius: 8px;
   border: 2px solid #0F3F79;
   position: relative;
+  background-color: #175fb6;
+  color: white;
   font-size: .7rem;
 }
 
@@ -1164,13 +1167,8 @@ nav {
   position: relative;
 }
 
-.eliminated > p {
-  text-decoration: line-through;
-}
-
 .eliminated .country__image img {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  opacity: .5;
 }
 
 .country__image {
