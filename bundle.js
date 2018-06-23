@@ -4959,6 +4959,29 @@ let matches = {
            {name: "Luka Modric", minute: 80},
            {name: "Ivan Rakitic", minute: 90},
         ]
+    },
+    match24 : {
+        goals1: [
+            {name: "Philippe Coutinho", minute: 90},
+            {name: "Neymar", minute: 90}
+        ], 
+        goals2: []
+    },
+    match25 : {
+        goals1: [
+            {name: "Ahmed Musa", minute: 49},
+            {name: "Ahmed Musa", minute: 75}
+        ], 
+        goals2: []
+    },
+    match26 : {
+        goals1: [
+            {name: "Aleksandar Mitrovic", minute: 5}
+        ], 
+        goals2: [
+            {name: "Granit Xhaka", minute: 52},
+            {name: "Xherdan Shaqiri", minute: 90}
+        ]
     }
 };
 
@@ -5336,9 +5359,9 @@ const match23 = new Match(23, '2018-06-21', '21:00', 'Argentina', 'Croatia', 0, 
 const matchDay8 = [match21, match22, match23];
 
 //Matchday 9
-const match24 = new Match(24, '2018-06-22', '15:00', 'Brazil', 'Costa Rica', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
-const match25 = new Match(25, '2018-06-22', '18:00', 'Nigeria', 'Iceland', null, null, 'Volgograd Arena', 'Volgograd', 'UTC+3', null);
-const match26 = new Match(26, '2018-06-22', '20:00', 'Serbia', 'Switzerland', null, null, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', null);
+const match24 = new Match(24, '2018-06-22', '15:00', 'Brazil', 'Costa Rica', 2, 0, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', "u2v_mb5Xx00", goals.match24.goals1, goals.match2.goals2);
+const match25 = new Match(25, '2018-06-22', '18:00', 'Nigeria', 'Iceland', 2, 0, 'Volgograd Arena', 'Volgograd', 'UTC+3', "KIk9avLQSds", goals.match25.goals1, goals.match25.goals2);
+const match26 = new Match(26, '2018-06-22', '20:00', 'Serbia', 'Switzerland', 1, 2, 'Kalingrad Stadium', 'Kalingrad', 'UTC+2', "0O3CbugZtTg", goals.match26.goals1, goals.match26.goals2);
 
 const matchDay9 = [match24, match25, match26];
 

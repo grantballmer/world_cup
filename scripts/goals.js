@@ -306,6 +306,29 @@ let matches = {
            {name: "Luka Modric", minute: 80},
            {name: "Ivan Rakitic", minute: 90},
         ]
+    },
+    match24 : {
+        goals1: [
+            {name: "Philippe Coutinho", minute: 90},
+            {name: "Neymar", minute: 90}
+        ], 
+        goals2: []
+    },
+    match25 : {
+        goals1: [
+            {name: "Ahmed Musa", minute: 49},
+            {name: "Ahmed Musa", minute: 75}
+        ], 
+        goals2: []
+    },
+    match26 : {
+        goals1: [
+            {name: "Aleksandar Mitrovic", minute: 5}
+        ], 
+        goals2: [
+            {name: "Granit Xhaka", minute: 52},
+            {name: "Xherdan Shaqiri", minute: 90}
+        ]
     }
 };
 

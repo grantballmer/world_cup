@@ -138,9 +138,12 @@
     .score__row {
         height: 50%;
         width: 100%;
-        font-size: .7rem;
+        font-size: .58rem;
         font-weight: 700;
         @include flex(space-around, center);
+        @include wide-mobile {
+            font-size: .7rem;
+        }
     
         & * {
             max-height: 100%;

@@ -791,7 +791,7 @@ nav {
 .info .score__row {
   height: 50%;
   width: 100%;
-  font-size: .7rem;
+  font-size: .58rem;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -801,6 +801,12 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 550px) {
+  .info .score__row {
+    font-size: .7rem;
+  }
 }
 
 .info .score__row * {
@@ -1126,6 +1132,12 @@ nav {
     width: 50%;
     height: 100%;
     font-size: .7rem;
+  }
+}
+
+@media (min-width: 812px) {
+  .group__row--country:hover .info {
+    display: block;
   }
 }
 

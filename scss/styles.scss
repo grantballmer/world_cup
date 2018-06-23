@@ -164,11 +164,11 @@ $border-blue: #0B2E58;
                 font-size: .7rem;
             }
 
-            // &:hover .info {
-            //     @include tablet {
-            //         display: block;  
-            //     }
-            // }
+            &:hover .info {
+                @include tablet {
+                    display: block;  
+                }
+            }
 
             img {
                 max-height: 100%;
