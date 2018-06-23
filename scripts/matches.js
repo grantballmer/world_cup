@@ -131,5 +131,4 @@ const match48 = new Match(48, '2018-06-28', '21:00', 'Panama', 'Tunisia', null, 
 const matchDay15 = [match45, match46, match47, match48];
 
 const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15];
-
 module.exports.matches = matches;
