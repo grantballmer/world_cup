@@ -1,5 +1,6 @@
 let teams = require('./country_data');
 
+const navGroupElements = document.querySelectorAll('.nav__group');
 const groupElements = document.querySelectorAll('.nav__group--table');
 
 let allGroups = teams.groups;
@@ -85,3 +86,10 @@ allGroups.forEach((group, index) => {
 
     groupElements[index].insertAdjacentHTML('beforeend', table);
 });
+
+navGroupElements.forEach(element => element.addEventListener('click', function() {
+    if (window.innerWidth > 815) return;
+    navGroupElements.forEach(group => {
+        this !== group ? group.querySelector('.nav__group--table').classList.remove('toggleDisplay') : this.querySelector('.nav__group--table').classList.toggle('toggleDisplay');
+    })
+}));

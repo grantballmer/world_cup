@@ -48,7 +48,7 @@
 .match {
   width: 100%;
   height: 100px;
-  padding: 5px;
+  padding: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,6 +60,12 @@
           align-items: center;
   color: #444444;
   cursor: pointer;
+}
+
+@media (min-width: 550px) {
+  .match {
+    padding: 5px;
+  }
 }
 
 .match:hover {
@@ -83,13 +89,14 @@
   height: 100%;
   width: 30%;
   text-align: center;
-  margin-left: 3%;
+  margin-left: 1.5;
   font-size: .65rem;
 }
 
 @media (min-width: 550px) {
   .match__info {
     width: 19%;
+    margin-left: 3%;
   }
 }
 
@@ -101,7 +108,7 @@
 
 .match__teams {
   height: 100%;
-  width: 55%;
+  width: 65%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,12 +119,13 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
-  font-weight: 700;
-  font-size: .7rem;
+  font-weight: 600;
+  font-size: .65rem;
 }
 
 @media (min-width: 550px) {
   .match__teams {
+    font-weight: 700;
     width: 70%;
   }
 }
@@ -222,8 +230,14 @@
           flex-direction: column;
   height: 100%;
   width: 20%;
-  padding: 5px;
+  padding: 3px;
   text-align: center;
+}
+
+@media (min-width: 550px) {
+  .match__teams--score {
+    padding: 5px;
+  }
 }
 
 .flag__left {
@@ -278,7 +292,7 @@ nav {
 
 .nav__group {
   height: 100%;
-  width: 40px;
+  width: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,6 +309,7 @@ nav {
   border-right: 1px solid #0B2E58;
   font-size: .56rem;
   text-align: center;
+  z-index: 5;
 }
 
 @media (min-width: 550px) {
@@ -318,34 +333,9 @@ nav {
   }
 }
 
-.nav__group:hover .nav__group--table {
-  display: block;
-}
-
-.nav__group:nth-of-type(5) {
-  width: 35px;
-  margin: 0 2%;
-  border: none;
-  background-color: transparent;
-}
-
-@media (min-width: 550px) {
-  .nav__group:nth-of-type(5) {
-    width: 50px;
-  }
-}
-
 @media (min-width: 812px) {
-  .nav__group:nth-of-type(5) {
-    width: 87px;
-    margin: 0 3%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .nav__group:nth-of-type(5) {
-    width: 100px;
-    margin: 0 5%;
+  .nav__group:hover .nav__group--table {
+    display: block;
   }
 }
 
@@ -367,7 +357,7 @@ nav {
   background-color: white;
   color: black;
   font-size: .7rem;
-  z-index: 3;
+  z-index: 5;
 }
 
 @media (min-width: 550px) {
@@ -407,6 +397,33 @@ nav {
   }
 }
 
+.nav__middle {
+  width: 20px;
+  margin: 0 2%;
+  border: none;
+  background-color: transparent;
+}
+
+@media (min-width: 550px) {
+  .nav__middle {
+    width: 50px;
+  }
+}
+
+@media (min-width: 812px) {
+  .nav__middle {
+    width: 87px;
+    margin: 0 3%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__middle {
+    width: 100px;
+    margin: 0 5%;
+  }
+}
+
 .row {
   width: 100%;
   height: 20%;
@@ -420,9 +437,16 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   color: black;
-  padding: 10px 5px 1px 10px;
+  padding: 4px 0px 1px 2px;
   border-bottom: 1px solid grey;
   cursor: pointer;
+  font-size: .4rem;
+}
+
+@media (min-width: 550px) {
+  .row {
+    padding: 10px 5px 1px 10px;
+  }
 }
 
 .row:hover {
@@ -453,13 +477,14 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 15px;
+  margin-left: 5px;
   font-size: .55rem;
 }
 
 @media (min-width: 812px) {
   .row__item {
     font-size: .62rem;
+    margin-left: 15px;
   }
 }
 
@@ -484,6 +509,12 @@ nav {
   margin: 0;
 }
 
+@media (min-width: 550px) {
+  .row__item:first-of-type {
+    min-width: 35%;
+  }
+}
+
 @media (min-width: 812px) {
   .row__item:first-of-type {
     min-width: 42%;
@@ -498,8 +529,17 @@ nav {
 
 .image__container {
   height: 100%;
-  width: 30px;
-  margin: 0 10px;
+  width: 20px;
+  margin: 0 3px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+@media (min-width: 550px) {
+  .image__container {
+    width: 30px;
+    margin: 0 10px;
+  }
 }
 
 .image__container img {
@@ -589,6 +629,7 @@ nav {
   width: 100%;
   height: 10%;
   padding: 5px 0;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -612,6 +653,27 @@ nav {
             flex-direction: row;
     padding: 0;
   }
+}
+
+.info__name div {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-weight: 700;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
 .info__name img {
@@ -838,12 +900,6 @@ nav {
   display: block;
 }
 
-@media (min-width: 812px) {
-  .toggleDisplay {
-    display: inherit;
-  }
-}
-
 .scorers {
   width: 100%;
   height: auto;
@@ -887,7 +943,7 @@ nav {
 .half {
   width: 50%;
   height: 100%;
-  padding: 1.5%;
+  padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -897,6 +953,12 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 550px) {
+  .half {
+    padding: 1.5%;
+  }
 }
 
 .half__left {
@@ -1064,12 +1126,6 @@ nav {
     width: 50%;
     height: 100%;
     font-size: .7rem;
-  }
-}
-
-@media (min-width: 812px) {
-  .group__row--country:hover .info {
-    display: block;
   }
 }
 

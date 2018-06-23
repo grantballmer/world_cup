@@ -58,8 +58,11 @@ $border-blue: #0B2E58;
 .half {
     width: 50%;
     height: 100%;
-    padding: 1.5%;
+    padding: 2%;
     @include flex(flex-start, center);
+    @include wide-mobile {
+        padding: 1.5%;
+    }
 
     &__left {
         padding-right: 4%;
@@ -161,11 +164,11 @@ $border-blue: #0B2E58;
                 font-size: .7rem;
             }
 
-            &:hover .info {
-                @include tablet {
-                    display: block;  
-                }
-            }
+            // &:hover .info {
+            //     @include tablet {
+            //         display: block;  
+            //     }
+            // }
 
             img {
                 max-height: 100%;

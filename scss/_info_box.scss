@@ -57,11 +57,25 @@
         width: 100%;
         height: 10%;
         padding: 5px 0;
+        position: relative;
         @include flex(center, center);
         flex-direction: column;
         @include tablet {
             flex-direction: row;
             padding: 0;
+        }
+
+        div {
+            position: absolute;
+            top: 0;
+            right: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-weight: 700;
+            border: 1px solid black;
+            @include flex(center, center);
+            cursor: pointer;
         }
         
         img {
@@ -184,9 +198,9 @@
 
 .toggleDisplay {
     display: block;
-    @include tablet {
-        display: inherit;
-    }
+    // @include tablet {
+    //     display: inherit;
+    // }
 }
 
 .scorers {

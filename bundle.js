@@ -4984,6 +4984,7 @@ module.exports.matches = matches;
 },{}],5:[function(require,module,exports){
 let teams = require('./country_data');
 
+const navGroupElements = document.querySelectorAll('.nav__group');
 const groupElements = document.querySelectorAll('.nav__group--table');
 
 let allGroups = teams.groups;
@@ -5069,6 +5070,13 @@ allGroups.forEach((group, index) => {
 
     groupElements[index].insertAdjacentHTML('beforeend', table);
 });
+
+navGroupElements.forEach(element => element.addEventListener('click', function() {
+    if (window.innerWidth > 815) return;
+    navGroupElements.forEach(group => {
+        this !== group ? group.querySelector('.nav__group--table').classList.remove('toggleDisplay') : this.querySelector('.nav__group--table').classList.toggle('toggleDisplay');
+    })
+}));
 },{"./country_data":3}],6:[function(require,module,exports){
 const matchData = require('./matches');
 const countryData = require('./country_data');
@@ -5079,171 +5087,174 @@ const infoElements = document.querySelectorAll('[data-country]');
 
 let countryElements = document.querySelectorAll('.group__row--country');
 
-// window.addEventListener('load', function() {
-    function getInfo(countryName) {
-        //initialize variables
-        let prevMatch = false;
-        let nextMatch = [];
-        let formatName = countryName.toLowerCase().replace(' ', '-');
-        
-        //check matches to see if country matches team1 or team2 property
-        //Also check if a score, meaning the game has already been played 
-        //and if no score, it must be a future match
-        matches.forEach(matchDayArr => matchDayArr.forEach(match => {
-            if (countryName === match.team1 || countryName === match.team2) {
-                match.score1 !== null && match.score2 !== null ? prevMatch = match : nextMatch.push(match);
-            }
-        }));
-        
-        //function to look through prevMatch or nextMatch and grab info to construct 
-        //info element that will be inserted into HTML
-        
-        function createMatchBox(matchInfo) {
-            //set names and scores correctly for country and country opponent
-            let countryScore; let oppScore;
-            let opponent;
-            if (countryName === matchInfo.team1) {
-                [countryScore, opponent, oppScore] = [matchInfo.score1, matchInfo.team2, matchInfo.score2];
-            } else {
-            [countryScore, opponent, oppScore] = [matchInfo.score2, matchInfo.team1, matchInfo.score1]; 
-            }
-            
-            //find local user time of match with moment.js
-            let utc = matchInfo.timezone.split('+')[1];
-            let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
-            
-            //format names to use to find correct image from assets folder
-            let formatOppName = opponent.toLowerCase().replace(' ', '-');
-            
-            //correct html for setting prevMatch element info
-            if (matchInfo === prevMatch) {
-            let box = `
-                <div class="info__match--date">
-                    <p>${matchInfo.stadium}</p>
-                    <p>${newDate}</p>
-                </div>
-                <div class="score__row">
-                    <p>${countryName}</p>
-                    <img src="./assets/small/${formatName}.png">
-                    <p>${countryScore} - ${oppScore}</p>
-                    <img src="./assets/small/${formatOppName}.png">
-                    <p>${opponent}</p>
-                </div>`;
-                return box;
-            } else {
-            let box = `
-                <div class="info__match--date">
-                    <p>${matchInfo.stadium}</p>
-                    <p>${newDate}</p>
-                </div>
-                <div class="score__row">
-                    <p>${countryName}</p>
-                    <img src="./assets/small/${formatName}.png">
-                    <p>VS</p>
-                    <img src="./assets/small/${formatOppName}.png">
-                    <p>${opponent}</p>
-                </div>`;
-                return box;
-            }
+function getInfo(countryName) {
+    //initialize variables
+    let prevMatch = false;
+    let nextMatch = [];
+    let formatName = countryName.toLowerCase().replace(' ', '-');
+    
+    //check matches to see if country matches team1 or team2 property
+    //Also check if a score, meaning the game has already been played 
+    //and if no score, it must be a future match
+    matches.forEach(matchDayArr => matchDayArr.forEach(match => {
+        if (countryName === match.team1 || countryName === match.team2) {
+            match.score1 !== null && match.score2 !== null ? prevMatch = match : nextMatch.push(match);
         }
-        
-        // let formatName = countryName.toLowerCase().replace(' ', '-');
-        
-        function createScorersInfo() {
-            //format country name to match variable name in country_data.js file and then grab country info
-            let formatForVariable = countryName[0].toLowerCase() + countryName.substring(1).replace(' ', '');
-            let country = countryData.teams[formatForVariable];
-            
-            //need to grab and sort order of country's scorers to display top scorers
-            let scorersArray = [];
-            for (let player in country.scorers) {
-                scorersArray.push([player, country.scorers[player]]);
-            }
-            scorersArray.sort((a, b) =>  b[1] - a[1]);
-            
-            //create top scorers element and populate it with country's scorers information 
-            let element = `
-            <div class="scorers">
-            `;
-            
-            scorersArray.forEach((playerArr, index) => {
-                let playerElement = `
-                
-                    <p>${index + 1})</p> 
-                    <p class="scorers__name">${playerArr[0]}</p> 
-                    <p>${playerArr[1]}</p>
-                
-                        
-                `;
-                
-                element += playerElement;
-            });
-            element += `</div>`;
-            return element;
-        }
-
-        let scorerElement = createScorersInfo();
-
-        let infoBox = `
-        <div class="info__name">
-            <img src="./assets/small/${formatName}.png">
-            <p>${countryName}</p>
-        </div>`;
-
-        let nextHTML = createMatchBox(nextMatch[0]);
-        
-        if (prevMatch) {
-            let prevHTML = createMatchBox(prevMatch);
-            infoBox += `
-            <div class="info__row">
-                <div class="info__match info__prev">
-                <h2>Prev Match</h2>
-                ${prevHTML}
-                </div>
-                <div class="info__match info__next">
-                    <h2>Next Match</h2>  
-                    ${nextHTML}
-                </div>
-            </div>
-            <div class="info__details">
-                <div class="info__details--video">
-                    <a href="https://www.youtube.com/watch?v=${prevMatch.youtubeID}" target="_blank"> 
-                        <img src="https://img.youtube.com/vi/${prevMatch.youtubeID}/maxresdefault.jpg"></img>
-                    </a>        
-                </div>
-                <div class="info__details--scorers">
-                    <h2>Top Scorers</h2>
-                    ${scorerElement}
-                </div>
-            </div>
-            
-            `;
-            return infoBox;
+    }));
+    
+    //function to look through prevMatch or nextMatch and grab info to construct 
+    //info element that will be inserted into HTML
+    
+    function createMatchBox(matchInfo) {
+        //set names and scores correctly for country and country opponent
+        let countryScore; let oppScore;
+        let opponent;
+        if (countryName === matchInfo.team1) {
+            [countryScore, opponent, oppScore] = [matchInfo.score1, matchInfo.team2, matchInfo.score2];
         } else {
-            infoBox += `
-            <div class="info__row">
-                <div class="info__match info__next">
-                    <h2>Next Match</h2>  
-                    ${nextHTML}
-                </div>
-            </div>  
-            `;
-            return infoBox;
+        [countryScore, opponent, oppScore] = [matchInfo.score2, matchInfo.team1, matchInfo.score1]; 
         }
-
+        
+        //find local user time of match with moment.js
+        let utc = matchInfo.timezone.split('+')[1];
+        let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
+        
+        //format names to use to find correct image from assets folder
+        let formatOppName = opponent.toLowerCase().replace(' ', '-');
+        
+        //correct html for setting prevMatch element info
+        if (matchInfo === prevMatch) {
+        let box = `
+            <div class="info__match--date">
+                <p>${matchInfo.stadium}</p>
+                <p>${newDate}</p>
+            </div>
+            <div class="score__row">
+                <p>${countryName}</p>
+                <img src="./assets/small/${formatName}.png">
+                <p>${countryScore} - ${oppScore}</p>
+                <img src="./assets/small/${formatOppName}.png">
+                <p>${opponent}</p>
+            </div>`;
+            return box;
+        } else {
+        let box = `
+            <div class="info__match--date">
+                <p>${matchInfo.stadium}</p>
+                <p>${newDate}</p>
+            </div>
+            <div class="score__row">
+                <p>${countryName}</p>
+                <img src="./assets/small/${formatName}.png">
+                <p>VS</p>
+                <img src="./assets/small/${formatOppName}.png">
+                <p>${opponent}</p>
+            </div>`;
+            return box;
+        }
+    }
+    
+    // let formatName = countryName.toLowerCase().replace(' ', '-');
+    
+    function createScorersInfo() {
+        //format country name to match variable name in country_data.js file and then grab country info
+        let formatForVariable = countryName[0].toLowerCase() + countryName.substring(1).replace(' ', '');
+        let country = countryData.teams[formatForVariable];
+        
+        //need to grab and sort order of country's scorers to display top scorers
+        let scorersArray = [];
+        for (let player in country.scorers) {
+            scorersArray.push([player, country.scorers[player]]);
+        }
+        scorersArray.sort((a, b) =>  b[1] - a[1]);
+        
+        //create top scorers element and populate it with country's scorers information 
+        let element = `
+        <div class="scorers">
+        `;
+        
+        scorersArray.forEach((playerArr, index) => {
+            let playerElement = `
+            
+                <p>${index + 1})</p> 
+                <p class="scorers__name">${playerArr[0]}</p> 
+                <p>${playerArr[1]}</p>
+            
+                    
+            `;
+            
+            element += playerElement;
+        });
+        element += `</div>`;
+        return element;
     }
 
-    infoElements.forEach(country => {
-        let countryName = country.dataset.country; 
-        let createdInfoBox = getInfo(countryName);
-        country.insertAdjacentHTML('beforeend', createdInfoBox);
-    });
+    let scorerElement = createScorersInfo();
 
-    countryElements.forEach(element => element.addEventListener('click', function() {
-        if (window.innerWidth > 815) return;
-        this.querySelector('.info').classList.toggle('toggleDisplay');
-    }));
-// });
+    let infoBox = `
+    <div class="info__name">
+        <div>X</div>
+        <img src="./assets/small/${formatName}.png">
+        <p>${countryName}</p>
+    </div>`;
+
+    let nextHTML = createMatchBox(nextMatch[0]);
+    
+    if (prevMatch) {
+        let prevHTML = createMatchBox(prevMatch);
+        infoBox += `
+        <div class="info__row">
+            <div class="info__match info__prev">
+            <h2>Prev Match</h2>
+            ${prevHTML}
+            </div>
+            <div class="info__match info__next">
+                <h2>Next Match</h2>  
+                ${nextHTML}
+            </div>
+        </div>
+        <div class="info__details">
+            <div class="info__details--video">
+                <a href="https://www.youtube.com/watch?v=${prevMatch.youtubeID}" target="_blank"> 
+                    <img src="https://img.youtube.com/vi/${prevMatch.youtubeID}/maxresdefault.jpg"></img>
+                </a>        
+            </div>
+            <div class="info__details--scorers">
+                <h2>Top Scorers</h2>
+                ${scorerElement}
+            </div>
+        </div>
+        
+        `;
+        return infoBox;
+    } else {
+        infoBox += `
+        <div class="info__row">
+            <div class="info__match info__next">
+                <h2>Next Match</h2>  
+                ${nextHTML}
+            </div>
+        </div>  
+        `;
+        return infoBox;
+    }
+
+}
+
+infoElements.forEach(country => {
+    let countryName = country.dataset.country; 
+    let createdInfoBox = getInfo(countryName);
+    country.insertAdjacentHTML('beforeend', createdInfoBox);
+});
+
+//control infoBox displaying on click on mobile device
+countryElements.forEach(element => element.addEventListener('click', function() {
+    if (window.innerWidth > 815) return;
+    countryElements.forEach(item => {
+        this !== item ? item.querySelector('.info').classList.remove('toggleDisplay') : this.querySelector('.info').classList.toggle('toggleDisplay');
+    })
+}));
+
 },{"./country_data":3,"./matches":7,"moment":2}],7:[function(require,module,exports){
 let countryData = require('./country_data');
 let matchGoals = require('./goals');
@@ -5386,77 +5397,77 @@ const moment = require('moment');
 let countryData = require('./country_data');
 
 const matches = matchData.matches;
-window.addEventListener('load', function() {
-    matches.forEach(matchDayArr => {
-        //find local user time of match with moment.js
-            // let utc = matchInfo.timezone.split('+')[1];
-            // let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
-        let formattedDate = moment(matchDayArr[0].date).format('ll');
-        
-        let element = `
-        <div class="matchday">
-            <div class="matchday__date">
-                <p>${formattedDate}</p>
-            </div>
-        `;
-        matchDayArr.forEach(match => {
-            //format country name to match variable name in country_data.js file and then grab country info
-            let formatName1 = match.team1[0].toLowerCase() + match.team1.substring(1).replace(' ', '');
-            let image1 = countryData.teams[formatName1].images[0];
 
-            let formatName2 = match.team2[0].toLowerCase() + match.team2.substring(1).replace(' ', '');
-            let image2 = countryData.teams[formatName2].images[0];
-            
-            //find local user time of match with moment.js
-            let utc = match.timezone.split('+')[1];
-            let newTime = moment(`${match.date} ${match.time}+0${utc}`).format('LT');
-            //make a date that can account for some matches taking place at 12am or 3am the following day
-            let newDate = moment(`${match.date} ${match.time}+0${utc}`).format('ll').split(',')[0];
-            
-            let scoreElement = `
-                <p>Full-time</p>
-                <p>${match.score1} - ${match.score2}</p>
-            `;
-            
-            let upComingMatch = `
-            <p>${newDate}</p>
-            <p>${newTime}</p>
-            `;
-            
-            match.score1 === null ? scoreElement = upComingMatch : null;
-
-            element += `
-            <div class="matchday__match match">
-                <div class="match__info">
-                    <p>${formattedDate} ${match.time} - Local Time</p>
-                    <p>${match.stadium}</p>
-                    <p>${match.city}</p>
-                </div>
-                <div class="match__teams">
-                    <div class="match__teams--wrapper">
-                        <p class="match__teams--team match__teams--team__left">${match.team1}</p>
-                        <div class="match__teams--image flag__left">
-                            <img src=${image1}>
-                        </div>
-                    </div>        
-                    <div class="match__teams--score">
-                        ${scoreElement}
-                    </div>
-                    <div class="match__teams--wrapper">
-                        <div class="match__teams--image flag2">
-                            <img src=${image2}>
-                        </div>
-                        <p class="match__teams--team">${match.team2}</p>
-                    </div>    
-                </div>
-            </div>        
-            `;
-        });
-        element += `
+matches.forEach(matchDayArr => {
+    //find local user time of match with moment.js
+        // let utc = matchInfo.timezone.split('+')[1];
+        // let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
+    let formattedDate = moment(matchDayArr[0].date).format('ll');
+    
+    let element = `
+    <div class="matchday">
+        <div class="matchday__date">
+            <p>${formattedDate}</p>
         </div>
-        `;
+    `;
+    matchDayArr.forEach(match => {
+        //format country name to match variable name in country_data.js file and then grab country info
+        let formatName1 = match.team1[0].toLowerCase() + match.team1.substring(1).replace(' ', '');
+        let image1 = countryData.teams[formatName1].images[0];
 
-        document.querySelector('.schedule').insertAdjacentHTML('beforeEnd', element);
+        let formatName2 = match.team2[0].toLowerCase() + match.team2.substring(1).replace(' ', '');
+        let image2 = countryData.teams[formatName2].images[0];
+        
+        //find local user time of match with moment.js
+        let utc = match.timezone.split('+')[1];
+        let newTime = moment(`${match.date} ${match.time}+0${utc}`).format('LT');
+        //make a date that can account for some matches taking place at 12am or 3am the following day
+        let newDate = moment(`${match.date} ${match.time}+0${utc}`).format('ll').split(',')[0];
+        
+        let scoreElement = `
+            <p>Full-time</p>
+            <p>${match.score1} - ${match.score2}</p>
+        `;
+        
+        let upComingMatch = `
+        <p>${newDate}</p>
+        <p>${newTime}</p>
+        `;
+        
+        match.score1 === null ? scoreElement = upComingMatch : null;
+
+        element += `
+        <div class="matchday__match match">
+            <div class="match__info">
+                <p>${formattedDate} ${match.time} - Local Time</p>
+                <p>${match.stadium}</p>
+                <p>${match.city}</p>
+            </div>
+            <div class="match__teams">
+                <div class="match__teams--wrapper">
+                    <p class="match__teams--team match__teams--team__left">${match.team1}</p>
+                    <div class="match__teams--image flag__left">
+                        <img src=${image1}>
+                    </div>
+                </div>        
+                <div class="match__teams--score">
+                    ${scoreElement}
+                </div>
+                <div class="match__teams--wrapper">
+                    <div class="match__teams--image flag2">
+                        <img src=${image2}>
+                    </div>
+                    <p class="match__teams--team">${match.team2}</p>
+                </div>    
+            </div>
+        </div>        
+        `;
     });
+    element += `
+    </div>
+    `;
+
+    document.querySelector('.schedule').insertAdjacentHTML('beforeEnd', element);
 });
+
 },{"./country_data":3,"./matches":7,"moment":2}]},{},[1]);
