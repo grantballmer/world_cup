@@ -85,7 +85,7 @@ const match26 = new Match(26, '2018-06-22', '20:00', 'Serbia', 'Switzerland', 1,
 const matchDay9 = [match24, match25, match26];
 
 //Matchday 10
-const match27 = new Match(27, '2018-06-23', '15:00', 'Belgium', 'Tunisia', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
+const match27 = new Match(27, '2018-06-23', '15:00', 'Belgium', 'Tunisia', 5, 2, 'Spartak Stadium', 'Moscow', 'UTC+3', goals.match27.goals1, goals.match27.goals2);
 const match28 = new Match(28, '2018-06-23', '18:00', 'South Korea', 'Mexico', null, null, 'Rostov Arena', 'Rostov-on-Don', 'UTC+3', null);
 const match29 = new Match(29, '2018-06-23', '21:00', 'Germany', 'Sweden', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
 
