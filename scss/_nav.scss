@@ -149,10 +149,10 @@ nav {
     color: black;
     padding: 4px 0px 1px 2px;
     border-bottom: 1px solid grey;
-    cursor: pointer;
+    // cursor: pointer;
     font-size: .4rem;
     @include wide-mobile {
-        padding: 10px 5px 1px 10px;
+        padding: 5px 5px 1px 10px;
     }
 
     &:hover {
@@ -186,17 +186,11 @@ nav {
 
         &:first-of-type {
             height: 100%;
-            min-width: 35%;
+            min-width: 37%;
             @include flex(flex-start, center);
             margin: 0;
             @include wide-mobile {
-                min-width: 35%;
-            }
-            @include tablet {
-               min-width: 42%; 
-            }
-            @include tablet {
-               min-width: 45%; 
+                min-width: 45%;
             }
         }
     }
@@ -206,7 +200,7 @@ nav {
     height: 100%;
     width: 20px;
     margin: 0 3px;
-    align-self: center;
+    @include flex(center, center);
     @include wide-mobile {
         width: 30px;
         margin: 0 10px;

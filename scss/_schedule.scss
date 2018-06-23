@@ -36,7 +36,6 @@
     padding: 3px;
     @include flex(flex-start, center);
     color: rgb(68, 68, 68);
-    cursor: pointer;
     @include wide-mobile {
         padding: 5px;
     }

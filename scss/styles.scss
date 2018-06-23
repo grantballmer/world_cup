@@ -173,8 +173,20 @@ $border-blue: #0B2E58;
             img {
                 max-height: 100%;
                 max-width: 100%;
+                position: relative;
             }
         }
+    }
+}
+
+.eliminated {
+
+    & > p {
+        text-decoration: line-through;
+    }
+
+    .country__image img {
+        filter: grayscale(100%);
     }
 }
 
@@ -185,7 +197,8 @@ $border-blue: #0B2E58;
     @include flex(center, center);
     flex-direction: column;
     cursor: pointer;
-
+    position: relative;
+    z-index: 1;
     // &:hover .info {
     //     display: flex;
     // }
