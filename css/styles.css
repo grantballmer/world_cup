@@ -1140,7 +1140,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: .5rem;
+  font-size: .45rem;
 }
 
 @media (min-width: 812px) {
