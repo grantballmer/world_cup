@@ -1173,7 +1173,7 @@ nav {
 
 .country__image {
   height: 62%;
-  width: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
