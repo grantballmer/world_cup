@@ -671,6 +671,12 @@ nav {
   cursor: pointer;
 }
 
+@media (min-width: 812px) {
+  .info__name div {
+    display: none;
+  }
+}
+
 .info__name img {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -1045,14 +1051,6 @@ nav {
   }
 }
 
-.group__left {
-  border-top-left-radius: 0px;
-}
-
-.group__right {
-  border-top-right-radius: 0px;
-}
-
 .group__name {
   width: 80%;
   height: 12px;
@@ -1086,6 +1084,14 @@ nav {
 
 .group__name--left {
   left: -2px;
+}
+
+.group__name__left {
+  border-top-left-radius: 0px;
+}
+
+.group__name__right {
+  border-top-right-radius: 0px;
 }
 
 .group__name--right {

@@ -107,9 +107,6 @@ $border-blue: #0B2E58;
         font-size: .8rem;
     }
 
-    &__left {border-top-left-radius: 0px;}
-    &__right {border-top-right-radius: 0px;}
-
     &__name {
         width: 80%;
         height: 12px;
@@ -121,32 +118,21 @@ $border-blue: #0B2E58;
         border: 2px solid $primary-blue;
         background-color: $primary-blue;
         transform: translateY(-100%);
-        // border-top-left-radius: 8px;
-        // border-top-right-radius: 8px;
         font-size: .55rem;
         @include tablet {
             width: 50%;
             height: 20px;
             font-size: .7rem;
-            // border-top-right-radius: 8px;
         }
 
-        &--left {
-            left: -2px;
-            // border-top-left-radius: 8px;
-            // @include tablet {
-            //     border-top-right-radius: 8px; 
-            // }
-        }
+        &--left {left: -2px;}
+        &__left {border-top-left-radius: 0px;}
+        &__right {border-top-right-radius: 0px;}
+
         &--right {
             justify-content: flex-end;
             padding-right: 5px;
             right: -2px;
-            // border-top-right-radius: 8px; 
-            // @include tablet {
-            //     border-top-left-radius: 8px; 
-            // }
-
         }
     }
 

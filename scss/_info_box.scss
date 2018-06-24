@@ -78,6 +78,9 @@
             border: 1px solid black;
             @include flex(center, center);
             cursor: pointer;
+            @include tablet {
+                display: none;
+            }
         }
         
         img {
@@ -219,9 +222,6 @@
 
 .toggleDisplay {
     display: block;
-    // @include tablet {
-    //     display: inherit;
-    // }
 }
 
 .scorers {
