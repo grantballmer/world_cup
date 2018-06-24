@@ -89,11 +89,6 @@ const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, moroc
 , iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
 poland, senegal, colombia, japan};
 
-// let teamsArr = {};
-// groups.forEach(group => group.forEach(team => teamsArr.push(team)));
-
-// console.log(teams, teamsArr);
-
 function updateTeamData(team,teamScore, oppScore, goals) {
     if (teamScore == null) return;
     team.mp ++;
