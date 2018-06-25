@@ -510,7 +510,7 @@ nav {
   justify-items: center; }
   .scorers p {
     grid-column: span 1;
-    margin: 5px 0; }
+    margin: 2.5px 0; }
   .scorers__name {
     grid-column: span 2; }
 

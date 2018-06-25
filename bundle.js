@@ -5130,8 +5130,8 @@ function getInfo(countryName) {
         infoBox += `
         <div class="info__row">
             <div class="info__match info__prev">
-            <h2>Prev Match</h2>
-            ${prevHTML}
+                <h2>Prev Match</h2>
+                ${prevHTML}
             </div>
             <div class="info__match info__next">
                 <h2>Next Match</h2>  
