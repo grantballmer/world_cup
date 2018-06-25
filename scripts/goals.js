@@ -223,6 +223,37 @@ let matches = {
         goals2: [
             {name: "Ola Toivonen", minute: 32}
         ]
+    },
+    match30 : {
+        goals1: [
+            {name: "John Stones", minute: 8},
+            {name: "Harry Kane", minute: 22},
+            {name: "Jesse Lingard", minute: 36},
+            {name: "John Stones", minute: 40},
+            {name: "Harry Kane", minute: 45},
+            {name: "Harry Kane", minute: 62}
+        ], 
+        goals2: [
+            {name: "Felipe Baloy", minute: 78}
+        ]
+    },
+    match31 : {
+        goals1: [
+            {name: "Takashi Inui", minute: 34},
+            {name: "Keisuke Honda", minute: 78}
+        ], 
+        goals2: [
+            {name: "Sadio Mané", minute: 11},
+            {name: "Moussa Wagué", minute: 71}
+        ]
+    },
+    match32 : {
+        goals1: [], 
+        goals2: [
+            {name: "Yerry Mina", minute: 40},
+            {name: "Radamel Falcao", minute: 70},
+            {name: "Juan Cuadrado", minute: 75}
+        ]
     }
 };
 
