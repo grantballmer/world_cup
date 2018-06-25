@@ -181,13 +181,9 @@ $border-blue: #0B2E58;
 
 .eliminated {
 
-    // & > p {
-    //     text-decoration: line-through;
-    // }
-
     .country__image img {
-        opacity: .5;
-        // filter: grayscale(100%);
+        opacity: .4;
+
     }
 }
 
