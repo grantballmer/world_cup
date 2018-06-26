@@ -156,7 +156,7 @@ $border-blue: #0B2E58;
         border: 2px solid $primary-blue;
         background-color: $primary-blue;
         transform: translateY(-100%);
-        font-size: .4rem;
+        font-size: .35rem;
         @include wide-mobile {
             width: 80%;
             font-size: .55rem;
@@ -197,7 +197,7 @@ $border-blue: #0B2E58;
             // position: relative;
             @include flex(center, center);
             flex-direction: column;
-            font-size: .4rem;
+            font-size: .3rem;
             color: white;
             @include tablet {
                 position: relative;
