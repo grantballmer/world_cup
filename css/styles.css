@@ -530,7 +530,7 @@ nav {
 
 .arrow {
   position: absolute;
-  bottom: 5%;
+  bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -539,6 +539,9 @@ nav {
   flex-direction: column;
   color: #0F3F79;
   z-index: 5; }
+  @media (min-width: 550px) {
+    .arrow {
+      bottom: 5%; } }
   .arrow p {
     font-size: .8rem;
     font-weight: 200;
@@ -576,7 +579,7 @@ nav {
     padding-left: 4%; }
 
 .wrapper__group {
-  width: 49%;
+  width: 40%;
   height: 100%;
   padding-bottom: 0;
   display: flex;
@@ -605,7 +608,7 @@ nav {
     .group {
       font-size: .8rem; } }
   .group__name {
-    width: 80%;
+    width: 95%;
     height: 12px;
     position: absolute;
     top: 0;
@@ -617,7 +620,11 @@ nav {
     border: 2px solid #0F3F79;
     background-color: #0F3F79;
     transform: translateY(-100%);
-    font-size: .55rem; }
+    font-size: .45rem; }
+    @media (min-width: 550px) {
+      .group__name {
+        width: 80%;
+        font-size: .55rem; } }
     @media (min-width: 812px) {
       .group__name {
         width: 50%;
@@ -687,7 +694,7 @@ nav {
     max-width: 100%; }
 
 .round {
-  width: 17%;
+  width: 20%;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -713,7 +720,12 @@ nav {
     align-items: center;
     flex-direction: column;
     height: 40px;
-    font-size: .5rem; }
+    font-size: .4rem;
+    padding: 2px; }
+    @media (min-width: 550px) {
+      .matchup__team {
+        padding: 0;
+        font-size: .6rem; } }
     @media (min-width: 812px) {
       .matchup__team {
         font-size: .7rem;
@@ -723,10 +735,11 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: flex-end; }
     @media (min-width: 550px) {
       .matchup__flag {
-        height: 60%; } }
+        height: 60%;
+        align-items: center; } }
     @media (min-width: 812px) {
       .matchup__flag {
         height: 100%;
@@ -737,11 +750,17 @@ nav {
       max-height: 100%; }
   .matchup__top {
     position: absolute;
-    top: -3px;
+    top: 0px;
     transform: translateY(-100%); }
+    @media (min-width: 812px) {
+      .matchup__top {
+        top: -3px; } }
   .matchup__bottom {
     position: absolute;
-    bottom: 2px; }
+    bottom: 0; }
+    @media (min-width: 812px) {
+      .matchup__bottom {
+        bottom: 2px; } }
   .matchup__right {
     right: 0; }
 

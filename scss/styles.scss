@@ -57,14 +57,17 @@ $border-blue: #0B2E58;
 
 .arrow {
     position: absolute;
-    bottom: 5%;
+    bottom: 7%;
     left: 50%;
     transform: translateX(-50%);
     @include flex(center, center);
     flex-direction: column;
     color: $primary-blue;
-    // cursor: pointer;
     z-index: 5;
+    
+    @include wide-mobile {
+        bottom: 5%;
+    }
     p {
         font-size: .8rem;
         font-weight: 200;
@@ -116,7 +119,7 @@ $border-blue: #0B2E58;
 }
 
 .wrapper__group {
-    width: 49%;
+    width: 40%;
     height: 100%;
     // padding: 3%;
     padding-bottom: 0;
@@ -149,7 +152,7 @@ $border-blue: #0B2E58;
     }
 
     &__name {
-        width: 80%;
+        width: 95%;
         height: 12px;
         position: absolute;
         top: 0;
@@ -159,7 +162,11 @@ $border-blue: #0B2E58;
         border: 2px solid $primary-blue;
         background-color: $primary-blue;
         transform: translateY(-100%);
-        font-size: .55rem;
+        font-size: .45rem;
+        @include wide-mobile {
+            width: 80%;
+            font-size: .55rem;
+        }
         @include tablet {
             width: 50%;
             height: 20px;
@@ -244,7 +251,7 @@ $border-blue: #0B2E58;
 }
 
 .round {
-    width: 17%;
+    width: 20%;
     // width: 33.33%;
     height: 100%;
     @include flex(space-around, center);
@@ -270,7 +277,12 @@ $border-blue: #0B2E58;
         @include flex(center, center);
         flex-direction: column;
         height: 40px;
-        font-size: .5rem;
+        font-size: .4rem;
+        padding: 2px;
+        @include wide-mobile {
+            padding: 0;
+            font-size: .6rem;
+        }
         @include tablet {
             font-size: .7rem;
             flex-direction: row;
@@ -281,9 +293,10 @@ $border-blue: #0B2E58;
         height: 75%;
         width: 100%;
         
-        @include flex(center, center);
+        @include flex(center, flex-end);
         @include wide-mobile {
             height: 60%;
+            align-items: center;
         }
         @include tablet {
             height: 100%;
@@ -299,13 +312,20 @@ $border-blue: #0B2E58;
     
     &__top {
         position: absolute;
-        top: -3px;
+        top: 0px;
         transform: translateY(-100%);
+        @include tablet {
+            top: -3px;
+        }
     }
 
     &__bottom {
         position: absolute;
-        bottom: 2px;
+        bottom: 0;
+        
+        @include tablet {
+            bottom: 2px;
+        }
     }
 
     &__right {right: 0};
