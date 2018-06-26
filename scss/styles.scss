@@ -55,6 +55,47 @@ $border-blue: #0B2E58;
     }
 }
 
+.arrow {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flex(center, center);
+    flex-direction: column;
+    color: $primary-blue;
+    // cursor: pointer;
+    z-index: 5;
+    p {
+        font-size: .8rem;
+        font-weight: 200;
+        margin-bottom: 5px;
+        @include tablet {
+            font-size: 1rem;
+        }
+        @include tablet {
+            font-size: 1.2rem;
+        }
+    }
+    
+    i {
+        font-size: 2rem;
+        transition: all .3s linear;
+        cursor: pointer;
+        @include tablet {
+            font-size: 2.5rem;
+        }
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    
+    // &:hover i {
+    //     transform: scale(1.1);
+    //     transform-origin: center;
+    // }
+}
+
 .half {
     width: 50%;
     height: 100%;
@@ -190,27 +231,17 @@ $border-blue: #0B2E58;
 .country__image {
     height: 62%;
     width: 100%;
-    // width: 100%;
     @include flex(center, center);
     flex-direction: column;
     cursor: pointer;
     position: relative;
     z-index: 1;
-    // &:hover .info {
-    //     display: flex;
-    // }
 
     img {
         max-height: 100%;
         max-width: 100%;
     }
 }
-
-// .round__wrapper {
-//     width: 66%;
-//     height: 100%;
-//     @include flex(center, center);
-// }
 
 .round {
     width: 17%;
@@ -234,15 +265,47 @@ $border-blue: #0B2E58;
     border-right: 1px solid black;
     position: relative;
     
+    &__team {
+        width: 100%;
+        @include flex(center, center);
+        flex-direction: column;
+        height: 40px;
+        font-size: .5rem;
+        @include tablet {
+            font-size: .7rem;
+            flex-direction: row;
+        }
+    }
+    
+    &__flag {
+        height: 75%;
+        width: 100%;
+        
+        @include flex(center, center);
+        @include wide-mobile {
+            height: 60%;
+        }
+        @include tablet {
+            height: 100%;
+            width: 50%;
+            margin-right: 5px;
+        }
+        
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    
     &__top {
         position: absolute;
-        top: 0;
+        top: -3px;
         transform: translateY(-100%);
     }
 
     &__bottom {
         position: absolute;
-        bottom: 0;
+        bottom: 2px;
     }
 
     &__right {right: 0};

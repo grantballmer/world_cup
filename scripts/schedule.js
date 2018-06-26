@@ -8,6 +8,7 @@ matches.forEach(matchDayArr => {
     //find local user time of match with moment.js
         // let utc = matchInfo.timezone.split('+')[1];
         // let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
+    if (matchDayArr.team1 === null) return;
     let formattedDate = moment(matchDayArr[0].date).format('ll');
     
     let element = `
@@ -17,6 +18,7 @@ matches.forEach(matchDayArr => {
         </div>
     `;
     matchDayArr.forEach(match => {
+        if (match.team1 === null) return;
         //format country name to match variable name in country_data.js file and then grab country info
         let formatName1 = match.team1[0].toLowerCase() + match.team1.substring(1).replace(' ', '');
         let image1 = countryData.teams[formatName1].images[0];
@@ -36,7 +38,7 @@ matches.forEach(matchDayArr => {
         `;
         
         let upComingMatch = `
-        <p>${newDate}</p>
+        <p class="upcoming">${newDate}</p>
         <p>${newTime}</p>
         `;
         
@@ -75,3 +77,23 @@ matches.forEach(matchDayArr => {
 
     document.querySelector('.schedule').insertAdjacentHTML('beforeEnd', element);
 });
+
+const arrow = document.querySelector('.fa-arrow-circle-down');
+let upcomingMatch = document.querySelector('.upcoming').closest('.matchday');
+
+function clickHandler() {
+    let top  = window.pageYOffset;
+    let matchY = upcomingMatch.offsetTop;
+    let scrollNum = matchY - top;
+    window.scrollBy({
+        top: scrollNum,
+        behavior: 'smooth'
+    });
+}
+
+arrow.addEventListener('click', clickHandler);
+
+// setInterval(() => {
+//     let = elt.getBoundingClientRect()
+// })
+

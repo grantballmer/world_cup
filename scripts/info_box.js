@@ -21,7 +21,6 @@ function getInfo(countryName) {
             match.score1 !== null && match.score2 !== null ? prevMatch = match : nextMatch.push(match);
         }
     }));
-    
     //function to look through prevMatch or nextMatch and grab info to construct 
     //info element that will be inserted into HTML
     
@@ -117,8 +116,23 @@ function getInfo(countryName) {
         <img src="./assets/small/${formatName}.png">
         <p>${countryName}</p>
     </div>`;
-
-    let nextHTML = createMatchBox(nextMatch[0]);
+    
+    let nextHTML;
+    let nextContainter = '';
+    if (nextMatch.length > 0) {
+        nextHTML = createMatchBox(nextMatch[0]);
+        nextContainter = `
+        <div class="info__match info__next">
+            <h2>Next Match</h2>  
+            ${nextHTML}
+        </div>
+        `;
+    }
+    
+    //  <div class="info__match info__next">
+        //     <h2>Next Match</h2>  
+        //     ${nextHTML}
+        // </div>
     
     if (prevMatch) {
         let prevHTML = createMatchBox(prevMatch);
@@ -128,10 +142,7 @@ function getInfo(countryName) {
                 <h2>Prev Match</h2>
                 ${prevHTML}
             </div>
-            <div class="info__match info__next">
-                <h2>Next Match</h2>  
-                ${nextHTML}
-            </div>
+            ${nextContainter}
         </div>
         <div class="info__details">
             <div class="info__details--video">

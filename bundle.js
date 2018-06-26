@@ -4902,6 +4902,40 @@ let matches = {
             {name: "Radamel Falcao", minute: 70},
             {name: "Juan Cuadrado", minute: 75}
         ]
+    },
+    match33 : {
+        goals1: [
+            {name: "Salman Al-Faraj", minute: 45},
+            {name: "Salem Al-Dawsari", minute: 90}
+        ], 
+        goals2: [
+            {name: "Mohamed Salah", minute: 22}
+        ]
+    },
+    match34 : {
+        goals1: [
+            {name: "Luis Suárez", minute: 10},
+            {name: "Edinson Cavani", minute: 90}
+        ], 
+        goals2: []
+    },
+    match35 : {
+        goals1: [
+            {name: "Karim Ansarifard", minute: 90}
+        ], 
+        goals2: [
+            {name: "Ricardo Quaresma", minute: 45}
+        ]
+    },
+    match36 : {
+        goals1: [
+            {name: "Isco", minute: 19},
+            {name: "Iago Aspas", minute: 90}
+        ], 
+        goals2: [
+            {name: "Khalid Boutaïb", minute: 14},
+            {name: "Youssef En-Nesyri", minute: 81}
+        ]
     }
 };
 
@@ -5026,7 +5060,6 @@ function getInfo(countryName) {
             match.score1 !== null && match.score2 !== null ? prevMatch = match : nextMatch.push(match);
         }
     }));
-    
     //function to look through prevMatch or nextMatch and grab info to construct 
     //info element that will be inserted into HTML
     
@@ -5122,8 +5155,23 @@ function getInfo(countryName) {
         <img src="./assets/small/${formatName}.png">
         <p>${countryName}</p>
     </div>`;
-
-    let nextHTML = createMatchBox(nextMatch[0]);
+    
+    let nextHTML;
+    let nextContainter = '';
+    if (nextMatch.length > 0) {
+        nextHTML = createMatchBox(nextMatch[0]);
+        nextContainter = `
+        <div class="info__match info__next">
+            <h2>Next Match</h2>  
+            ${nextHTML}
+        </div>
+        `;
+    }
+    
+    //  <div class="info__match info__next">
+        //     <h2>Next Match</h2>  
+        //     ${nextHTML}
+        // </div>
     
     if (prevMatch) {
         let prevHTML = createMatchBox(prevMatch);
@@ -5133,10 +5181,7 @@ function getInfo(countryName) {
                 <h2>Prev Match</h2>
                 ${prevHTML}
             </div>
-            <div class="info__match info__next">
-                <h2>Next Match</h2>  
-                ${nextHTML}
-            </div>
+            ${nextContainter}
         </div>
         <div class="info__details">
             <div class="info__details--video">
@@ -5282,10 +5327,10 @@ const match32 = new Match(32, '2018-06-24', '21:00', 'Poland', 'Colombia', 0, 3,
 const matchDay11 = [match30, match31, match32];
 
 //Matchday 12
-const match33 = new Match(33, '2018-06-25', '17:00', 'Saudi Arabia', 'Egypt', null, null, 'Volgograd Arena', 'Volgograd', 'UTC+3', null);
-const match34 = new Match(34, '2018-06-25', '18:00', 'Uruguay', 'Russia', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
-const match35 = new Match(35, '2018-06-25', '21:00', 'Iran', 'Portugal', null, null, 'Mordovia Arena', 'Saransk', 'UTC+3', null);
-const match36 = new Match(36, '2018-06-25', '20:00', 'Spain', 'Morocco', null, null, 'Kaliningrad Stadium', 'Kaliningrad', 'UTC+2', null);
+const match33 = new Match(33, '2018-06-25', '17:00', 'Saudi Arabia', 'Egypt', 2, 1, 'Volgograd Arena', 'Volgograd', 'UTC+3', "lEzuFPeSBcA", goals.match33.goals1, goals.match33.goals2);
+const match34 = new Match(34, '2018-06-25', '18:00', 'Uruguay', 'Russia', 3, 0, 'Samara Arena', 'Samara', 'UTC+4', "I_YrTEiOVGo", goals.match34.goals1, goals.match34.goals2);
+const match35 = new Match(35, '2018-06-25', '21:00', 'Iran', 'Portugal', 1, 1, 'Mordovia Arena', 'Saransk', 'UTC+3', "JlPIrEKFCeo", goals.match35.goals1, goals.match35.goals2);
+const match36 = new Match(36, '2018-06-25', '20:00', 'Spain', 'Morocco', 2, 2, 'Kaliningrad Stadium', 'Kaliningrad', 'UTC+2', "cIOqidBVnO4", goals.match36.goals1, goals.match36.goals2);
 
 const matchDay12 = [match33, match34, match35, match36];
 
@@ -5313,7 +5358,43 @@ const match48 = new Match(48, '2018-06-28', '21:00', 'Panama', 'Tunisia', null, 
 
 const matchDay15 = [match45, match46, match47, match48];
 
-const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15];
+//Matchday 16
+const match49 = new Match(49, '2018-06-30', '17:00', null, null, null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
+const match50 = new Match(50, '2018-06-30', '21:00', 'Uruguay', 'Portugal', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
+
+const matchDay16 = [match49, match50];
+
+//Matchday 17
+const match51 = new Match(51, '2018-07-01', '17:00', 'Spain', 'Russia', null, null, 'Luzhniki Stadium', 'Moscow', 'UTC+3', null);
+const match52 = new Match(52, '2018-07-01', '21:00', null, null, null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+
+const matchDay17 = [match51, match52];
+
+//Matchday 18
+const match53 = new Match(53, '2018-07-02', '18:00', null, null, null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
+const match54 = new Match(54, '2018-07-02', '21:00', null, null, null, null, 'Rostov Arena', 'Moscow', 'UTC+3', null);
+
+const matchDay18 = [match53, match54];
+
+//Matchday 19
+const match55 = new Match(55, '2018-07-03', '17:00', null, null, null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
+const match56 = new Match(56, '2018-07-03', '21:00', null, null, null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
+
+const matchDay19 = [match53, match54];
+
+//Matchday 20
+const match57 = new Match(57, '2018-07-06', '17:00', null, null, null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match58 = new Match(58, '2018-07-06', '21:00', null, null, null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
+
+const matchDay20 = [match57, match58];
+
+//Matchday 21
+const match59 = new Match(59, '2018-07-07', '18:00', null, null, null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
+const match60 = new Match(60, '2018-07-07', '21:00', null, null, null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
+
+const matchDay21 = [match59, match60];
+
+const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15, matchDay16, matchDay17];
 
 module.exports.matches = matches;
 },{"./country_data":3,"./goals":4}],8:[function(require,module,exports){
@@ -5327,6 +5408,7 @@ matches.forEach(matchDayArr => {
     //find local user time of match with moment.js
         // let utc = matchInfo.timezone.split('+')[1];
         // let newDate = moment(`${matchInfo.date} ${matchInfo.time}+0${utc}`).format('LLL');
+    if (matchDayArr.team1 === null) return;
     let formattedDate = moment(matchDayArr[0].date).format('ll');
     
     let element = `
@@ -5336,6 +5418,7 @@ matches.forEach(matchDayArr => {
         </div>
     `;
     matchDayArr.forEach(match => {
+        if (match.team1 === null) return;
         //format country name to match variable name in country_data.js file and then grab country info
         let formatName1 = match.team1[0].toLowerCase() + match.team1.substring(1).replace(' ', '');
         let image1 = countryData.teams[formatName1].images[0];
@@ -5355,7 +5438,7 @@ matches.forEach(matchDayArr => {
         `;
         
         let upComingMatch = `
-        <p>${newDate}</p>
+        <p class="upcoming">${newDate}</p>
         <p>${newTime}</p>
         `;
         
@@ -5394,5 +5477,25 @@ matches.forEach(matchDayArr => {
 
     document.querySelector('.schedule').insertAdjacentHTML('beforeEnd', element);
 });
+
+const arrow = document.querySelector('.fa-arrow-circle-down');
+let upcomingMatch = document.querySelector('.upcoming').closest('.matchday');
+
+function clickHandler() {
+    let top  = window.pageYOffset;
+    let matchY = upcomingMatch.offsetTop;
+    let scrollNum = matchY - top;
+    window.scrollBy({
+        top: scrollNum,
+        behavior: 'smooth'
+    });
+}
+
+arrow.addEventListener('click', clickHandler);
+
+// setInterval(() => {
+//     let = elt.getBoundingClientRect()
+// })
+
 
 },{"./country_data":3,"./matches":7,"moment":2}]},{},[1]);

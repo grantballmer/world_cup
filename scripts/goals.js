@@ -254,6 +254,40 @@ let matches = {
             {name: "Radamel Falcao", minute: 70},
             {name: "Juan Cuadrado", minute: 75}
         ]
+    },
+    match33 : {
+        goals1: [
+            {name: "Salman Al-Faraj", minute: 45},
+            {name: "Salem Al-Dawsari", minute: 90}
+        ], 
+        goals2: [
+            {name: "Mohamed Salah", minute: 22}
+        ]
+    },
+    match34 : {
+        goals1: [
+            {name: "Luis Suárez", minute: 10},
+            {name: "Edinson Cavani", minute: 90}
+        ], 
+        goals2: []
+    },
+    match35 : {
+        goals1: [
+            {name: "Karim Ansarifard", minute: 90}
+        ], 
+        goals2: [
+            {name: "Ricardo Quaresma", minute: 45}
+        ]
+    },
+    match36 : {
+        goals1: [
+            {name: "Isco", minute: 19},
+            {name: "Iago Aspas", minute: 90}
+        ], 
+        goals2: [
+            {name: "Khalid Boutaïb", minute: 14},
+            {name: "Youssef En-Nesyri", minute: 81}
+        ]
     }
 };
 
