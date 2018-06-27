@@ -624,10 +624,7 @@ nav {
     border: 2px solid #0F3F79;
     background-color: #0F3F79;
     transform: translateY(-100%);
-    font-size: .25rem; }
-    @media (min-width: 400px) {
-      .group__name {
-        font-size: .4rem; } }
+    font-size: .4rem; }
     @media (min-width: 550px) {
       .group__name {
         width: 80%;
@@ -668,10 +665,7 @@ nav {
       align-items: center;
       flex-direction: column;
       color: white;
-      font-size: .25rem; }
-      @media (min-width: 400px) {
-        .group__row--country {
-          font-size: .4rem; } }
+      font-size: .4rem; }
       @media (min-width: 812px) {
         .group__row--country {
           position: relative;
