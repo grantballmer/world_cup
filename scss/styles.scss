@@ -69,7 +69,7 @@ $border-blue: #0B2E58;
     @include flex(center, center);
     flex-direction: column;
     color: $primary-blue;
-    z-index: 5;
+    z-index: 3;
     
     @include wide-mobile {
         bottom: 5%;

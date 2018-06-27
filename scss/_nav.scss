@@ -3,7 +3,7 @@ nav {
     @include flex(center, center);
     background-color: $primary-blue;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     @include tablet {
         height: 75px;
     }
@@ -53,24 +53,6 @@ nav {
         }
     }
 
-    // &:nth-of-type(5) {
-    //     width: 20px;
-    //     margin: 0 2%;
-    //     border: none;
-    //     background-color: transparent;
-    //     @include wide-mobile {
-    //         width: 50px;
-    //     }
-    //     @include tablet {
-    //         width: 87px;
-    //         margin: 0 3%;
-    //     }
-    //     @include desktop {
-    //         width: 100px;
-    //         margin: 0 5%;
-    //     }
-    // }
-
     p {margin: 0 3px;}
 
     &--table {
@@ -90,7 +72,7 @@ nav {
         background-color: white;
         color: black;
         font-size: .7rem;
-        z-index: 5;
+        z-index: 4;
         @include wide-mobile {
             width: 70%;
             left: 15%;

@@ -272,7 +272,7 @@ nav {
           align-items: center;
   background-color: #0F3F79;
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 @media (min-width: 812px) {
@@ -362,7 +362,7 @@ nav {
   background-color: white;
   color: black;
   font-size: .7rem;
-  z-index: 5;
+  z-index: 4;
 }
 
 @media (min-width: 550px) {
@@ -1002,7 +1002,7 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #0F3F79;
-  z-index: 5;
+  z-index: 3;
 }
 
 @media (min-width: 550px) {
