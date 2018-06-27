@@ -25,6 +25,12 @@ $border-blue: #0B2E58;
   }
 }
 
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+}
+
 @mixin flex($justify, $align) {
     display: flex;
     justify-content: $justify;
