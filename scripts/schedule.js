@@ -93,7 +93,3 @@ function clickHandler() {
 
 arrow.addEventListener('click', clickHandler);
 
-// setInterval(() => {
-//     let = elt.getBoundingClientRect()
-// })
-
