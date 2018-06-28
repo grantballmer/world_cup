@@ -115,10 +115,10 @@ const match40 = new Match(40, '2018-06-26', '21:00', 'Iceland', 'Croatia', 1, 2,
 const matchDay13 = [match37, match38, match39, match40];
 
 //Matchday 14
-const match41 = new Match(41, '2018-06-27', '17:00', 'South Korea', 'Germany', null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
-const match42 = new Match(42, '2018-06-27', '19:00', 'Mexico', 'Sweden', null, null, 'Ekaterinburg Arena', 'Ekaterinburg', 'UTC+5', null);
-const match43 = new Match(43, '2018-06-27', '21:00', 'Serbia', 'Brazil', null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
-const match44 = new Match(44, '2018-06-27', '21:00', 'Switzerland', 'Costa Rica', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match41 = new Match(41, '2018-06-27', '17:00', 'South Korea', 'Germany', 2, 0, 'Kazan Arena', 'Kazan', 'UTC+3', "OKjV2SQfKrw", goals.match41.goals1, goals.match41.goals2);
+const match42 = new Match(42, '2018-06-27', '19:00', 'Mexico', 'Sweden', 0, 3, 'Ekaterinburg Arena', 'Ekaterinburg', 'UTC+5', "BHT6V1SpmNA", goals.match42.goals1, goals.match42.goals2);
+const match43 = new Match(43, '2018-06-27', '21:00', 'Serbia', 'Brazil', 0, 2, 'Spartak Stadium', 'Moscow', 'UTC+3', "_dusyi-4pMs",  goals.match43.goals1, goals.match43.goals2);
+const match44 = new Match(44, '2018-06-27', '21:00', 'Switzerland', 'Costa Rica', 2, 2, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "izvscMabH8o",  goals.match44.goals1, goals.match44.goals2);
 
 const matchDay14 = [match41, match42, match43, match44];
 
@@ -143,13 +143,13 @@ const match52 = new Match(52, '2018-07-01', '21:00', 'Croatia', 'Denmark', null,
 const matchDay17 = [match51, match52];
 
 //Matchday 18
-const match53 = new Match(53, '2018-07-02', '18:00', null, null, null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
+const match53 = new Match(53, '2018-07-02', '18:00', 'Brazil', 'Mexico', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
 const match54 = new Match(54, '2018-07-02', '21:00', null, null, null, null, 'Rostov Arena', 'Moscow', 'UTC+3', null);
 
 const matchDay18 = [match53, match54];
 
 //Matchday 19
-const match55 = new Match(55, '2018-07-03', '17:00', null, null, null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
+const match55 = new Match(55, '2018-07-03', '17:00', 'Sweden', 'Switzerland', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
 const match56 = new Match(56, '2018-07-03', '21:00', null, null, null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
 
 const matchDay19 = [match53, match54];

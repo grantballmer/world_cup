@@ -6,11 +6,17 @@ const groupElements = document.querySelectorAll('.nav__group--table');
 let allGroups = teams.groups;
 allGroups.forEach((group, index) => {
     group.sort((a, b) => b.pts - a.pts);
+
     let first = group[0];
     let second = group[1];
     let third = group[2];
     let fourth = group[3];
-
+    
+    if (group[1].gd > group[0].gd) {
+        first = group[1];
+        second = group[0];
+    }
+    
     let table = `
     <div class="row">
         <div class="row__item row__item--first">Team</div>

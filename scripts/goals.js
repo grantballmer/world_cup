@@ -317,6 +317,36 @@ let matches = {
             {name: "Milan Badelj", minute: 53},
             {name: "Ivan Perisic", minute: 90}
         ]
+    },
+    match41 : {
+        goals1: [
+            {name: "Kim Young-Gwon", minute: 90},
+            {name: "Son Heung-Min", minute: 90}
+        ], 
+        goals2: []
+    },
+    match42 : {
+        goals1: [], 
+        goals2: [
+            {name: "Ludwig Augustinsson", minute: 50},
+            {name: "Andreas Granqvist", minute: 62}
+        ]
+    },
+    match43 : {
+        goals1: [], 
+        goals2: [
+            {name: "Paulinho", minute: 36},
+            {name: "Thiago Silva", minute: 68}
+        ]
+    },
+    match44 : {
+        goals1: [
+            {name: "Blerim Džemaili", minute: 31},
+            {name: "Josip Drmić", minute: 88}
+        ], 
+        goals2: [
+            {name: "Kendall Waston", minute: 56}
+        ]
     }
 };
 
