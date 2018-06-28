@@ -5445,7 +5445,7 @@ const matchDay18 = [match53, match54];
 const match55 = new Match(55, '2018-07-03', '17:00', 'Sweden', 'Switzerland', null, null, 'Saint Petersburg Stadium', 'Saint Petersburg', 'UTC+3', null);
 const match56 = new Match(56, '2018-07-03', '21:00', null, null, null, null, 'Spartak Stadium', 'Moscow', 'UTC+3', null);
 
-const matchDay19 = [match53, match54];
+const matchDay19 = [match55, match56];
 
 //Matchday 20
 const match57 = new Match(57, '2018-07-06', '17:00', null, null, null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
@@ -5459,7 +5459,7 @@ const match60 = new Match(60, '2018-07-07', '21:00', null, null, null, null, 'Fi
 
 const matchDay21 = [match59, match60];
 
-const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15, matchDay16, matchDay17];
+const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15, matchDay16, matchDay17, matchDay18, matchDay19];
 
 module.exports.matches = matches;
 },{"./country_data":3,"./goals":4}],8:[function(require,module,exports){
