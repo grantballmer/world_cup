@@ -347,6 +347,31 @@ let matches = {
         goals2: [
             {name: "Kendall Waston", minute: 56}
         ]
+    },
+    match45 : {
+        goals1: [], 
+        goals2: [
+            {name: "Jan Bednarek", minute: 59}
+        ]
+    },
+    match46 : {
+        goals1: [], 
+        goals2: [
+            {name: "Yerry Mina", minute: 74}
+        ]
+    },
+    match47 : {
+        goals1: [], 
+        goals2: [
+            {name: "Adnan Januzaj", minute: 51}
+        ]
+    },
+    match48 : {
+        goals1: [], 
+        goals2: [
+            {name: "Fakhreddine Ben Youssef", minute: 51},
+            {name: "Wahbi Khazri", minute: 66}
+        ]
     }
 };
 

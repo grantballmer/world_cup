@@ -17,6 +17,11 @@ allGroups.forEach((group, index) => {
         second = group[0];
     }
     
+    if (second.name === 'Senegal') {
+        second = group[2];
+        third = group[1];
+    }
+    
     let table = `
     <div class="row">
         <div class="row__item row__item--first">Team</div>
