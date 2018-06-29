@@ -209,10 +209,10 @@
             @include flex(flex-start, center);
             flex-direction: column;
             text-align: center;
-            font-size: .7rem;
+            font-size: .7srem;
             @include tablet {
                height: 100%;
-                width: 50%; 
+                width: 50%;
             }
             
             h2 {
@@ -239,7 +239,7 @@
     
     p {
         grid-column: span 1;
-        margin: 2.5px 0;
+        margin-bottom: 2.5px;
     }
 
     
