@@ -89,22 +89,24 @@ const teams = {russia, saudiArabia, egypt, uruguay, iran, spain, portugal, moroc
 , iceland, croatia, nigeria, brazil, switzerland, costaRica, serbia, germany, mexico, sweden, southKorea, belgium, panama, tunisia, england,
 poland, senegal, colombia, japan};
 
-function updateTeamData(team,teamScore, oppScore, goals) {
-    if (teamScore == null) return;
-    team.mp ++;
-    team.gf += teamScore;
-    team.ga += oppScore;
-    if (teamScore === oppScore) {
-        team.draws ++;
-        team.pts ++;
+function updateTeamData(team,teamScore, oppScore, goals, index) {
+    if (index < 15) {
+        if (teamScore == null) return;
+        team.mp ++;
+        team.gf += teamScore;
+        team.ga += oppScore;
+        if (teamScore === oppScore) {
+            team.draws ++;
+            team.pts ++;
+        }
+        else if (teamScore > oppScore) {
+            team.wins ++; 
+            team.pts += 3;
+        } else {
+            team.losses ++; 
+        }
+        team.gd += teamScore - oppScore;
     }
-    else if (teamScore > oppScore) {
-        team.wins ++; 
-        team.pts += 3;
-    } else {
-        team.losses ++; 
-    }
-    team.gd += teamScore - oppScore;
     if (goals) {
         goals.forEach(goal => {
             let scorerName = goal.name;
@@ -113,15 +115,18 @@ function updateTeamData(team,teamScore, oppScore, goals) {
     }
 }
 
-matches.forEach(matchDayArr => matchDayArr.forEach(match => {
-    groups.forEach(group => group.forEach(team => {
-        if (match.team1 === team.name) {
-            updateTeamData(team, match.score1, match.score2, match.goals1);
-        } else if (match.team2 === team.name) {
-            updateTeamData(team, match.score2, match.score1, match.goals2);
-        }
-    }));
-}));
+matches.forEach((matchDayArr,index) => {
+      matchDayArr.forEach(match => {
+        groups.forEach(group => group.forEach(team => {
+            if (match.team1 === team.name) {
+                updateTeamData(team, match.score1, match.score2, match.goals1, index);
+            } else if (match.team2 === team.name) {
+                updateTeamData(team, match.score2, match.score1, match.goals2, index);
+            }
+        }));  
+      });
+          
+});
 
 module.exports = {
     groups,

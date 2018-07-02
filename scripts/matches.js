@@ -123,22 +123,22 @@ const match44 = new Match(44, '2018-06-27', '21:00', 'Switzerland', 'Costa Rica'
 const matchDay14 = [match41, match42, match43, match44];
 
 //Matchday 15
-const match45 = new Match(45, '2018-06-28', '17:00', 'Japan', 'Poland', 0, 1, 'Volgograd Arena', 'Volgograd', 'UTC+3', "K7pVlD8Q660");
-const match46 = new Match(46, '2018-06-28', '18:00', 'Senegal', 'Colombia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "2CRmHuN-O84");
-const match47 = new Match(47, '2018-06-28', '20:00', 'England', 'Belgium', 0, 1, 'Kaliningrad Stadium', 'Kaliningrad', 'UTC+2', "N5F1hqWW_5w");
-const match48 = new Match(48, '2018-06-28', '21:00', 'Panama', 'Tunisia', 1, 2, 'Mordovia Arena', 'Saransk', 'UTC+3',"nc9zirKrT0Q");
+const match45 = new Match(45, '2018-06-28', '17:00', 'Japan', 'Poland', 0, 1, 'Volgograd Arena', 'Volgograd', 'UTC+3', "K7pVlD8Q660", goals.match45.goals1, goals.match45.goals2);
+const match46 = new Match(46, '2018-06-28', '18:00', 'Senegal', 'Colombia', 0, 1, 'Samara Arena', 'Samara', 'UTC+4', "2CRmHuN-O84", goals.match46goals1, goals.match46.goals2);
+const match47 = new Match(47, '2018-06-28', '20:00', 'England', 'Belgium', 0, 1, 'Kaliningrad Stadium', 'Kaliningrad', 'UTC+2', "N5F1hqWW_5w", goals.match47.goals1, goals.match47.goals2);
+const match48 = new Match(48, '2018-06-28', '21:00', 'Panama', 'Tunisia', 1, 2, 'Mordovia Arena', 'Saransk', 'UTC+3',"nc9zirKrT0Q", goals.match48.goals1, goals.match48.goals2);
 
 const matchDay15 = [match45, match46, match47, match48];
 
 //Matchday 16
-const match49 = new Match(49, '2018-06-30', '17:00', 'France', 'Argentina',null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
-const match50 = new Match(50, '2018-06-30', '21:00', 'Uruguay', 'Portugal', null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
+const match49 = new Match(49, '2018-06-30', '17:00', 'France', 'Argentina', 4, 3, 'Kazan Arena', 'Kazan', 'UTC+3', "6C6oOcDFmLY", goals.match49.goals1, goals.match49.goals2);
+const match50 = new Match(50, '2018-06-30', '21:00', 'Uruguay', 'Portugal', 2, 1, 'Fisht Stadium', 'Sochi', 'UTC+3', "auqyXFLZ_zw", goals.match50.goals1, goals.match50.goals2);
 
 const matchDay16 = [match49, match50];
 
 //Matchday 17
-const match51 = new Match(51, '2018-07-01', '17:00', 'Spain', 'Russia', null, null, 'Luzhniki Stadium', 'Moscow', 'UTC+3', null);
-const match52 = new Match(52, '2018-07-01', '21:00', 'Croatia', 'Denmark', null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match51 = new Match(51, '2018-07-01', '17:00', 'Spain', 'Russia', '1(3)', '1(4)', 'Luzhniki Stadium', 'Moscow', 'UTC+3', "gHPke43iqNg", goals.match51.goals1, goals.match51.goals2);
+const match52 = new Match(52, '2018-07-01', '21:00', 'Croatia', 'Denmark', '1(3)', '1(2)', 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', "5_iIW2DZ8nc", goals.match52.goals1, goals.match52.goals2);
 
 const matchDay17 = [match51, match52];
 
@@ -155,17 +155,17 @@ const match56 = new Match(56, '2018-07-03', '21:00', 'Colombia', 'England', null
 const matchDay19 = [match55, match56];
 
 //Matchday 20
-const match57 = new Match(57, '2018-07-06', '17:00', null, null, null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
+const match57 = new Match(57, '2018-07-06', '17:00', "Uruguay", "France", null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
 const match58 = new Match(58, '2018-07-06', '21:00', null, null, null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
 
 const matchDay20 = [match57, match58];
 
 //Matchday 21
 const match59 = new Match(59, '2018-07-07', '18:00', null, null, null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
-const match60 = new Match(60, '2018-07-07', '21:00', null, null, null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
+const match60 = new Match(60, '2018-07-07', '21:00', "Russia", "Croatia", null, null, 'Fisht Stadium', 'Sochi', 'UTC+3', null);
 
 const matchDay21 = [match59, match60];
 
-const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15, matchDay16, matchDay17, matchDay18, matchDay19];
+const matches = [matchDay1, matchDay2, matchDay3, matchDay4, matchDay5, matchDay6, matchDay7, matchDay8, matchDay9, matchDay10, matchDay11, matchDay12, matchDay13, matchDay14, matchDay15, matchDay16, matchDay17, matchDay18, matchDay19, matchDay20, matchDay21];
 
 module.exports.matches = matches;

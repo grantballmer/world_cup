@@ -93,16 +93,18 @@ function getInfo(countryName) {
         `;
         
         scorersArray.forEach((playerArr, index) => {
-            let playerElement = `
-            
+            if (index < 5) {
+                let playerElement = `
+                
                 <p>${index + 1})</p> 
                 <p class="scorers__name">${playerArr[0]}</p> 
                 <p>${playerArr[1]}</p>
-            
-                    
-            `;
-            
-            element += playerElement;
+                
+                        
+                `;
+                
+                element += playerElement;  
+            } 
         });
         element += `</div>`;
         return element;

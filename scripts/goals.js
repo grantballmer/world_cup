@@ -158,7 +158,7 @@ let matches = {
     },
     match22 : {
         goals1: [
-           {name: "Kylian Mbappé ", minute: 34} 
+           {name: "Kylian Mbappé", minute: 34} 
         ], 
         goals2: []
     },
@@ -371,6 +371,41 @@ let matches = {
         goals2: [
             {name: "Fakhreddine Ben Youssef", minute: 51},
             {name: "Wahbi Khazri", minute: 66}
+        ]
+    },
+    match49 : {
+        goals1: [
+            {name: "Antoine Griezmann", minute: 13},
+            {name: "Benjamin Pavard", minute: 57},
+            {name: "Kylian Mbappé", minute: 64},
+            {name: "Kylian Mbappé", minute: 68}
+        ], 
+        goals2: [
+            {name: "Ángel Di María", minute: 41},
+            {name: "Gabriel Mercado", minute: 48},
+            {name: "Sergio Agüero", minute: 90}
+        ]
+    },
+    match50 : {
+        goals1: [
+            {name: "Edinson Cavani", minute: 7},
+            {name: "Edinson Cavani", minute: 62}
+        ], 
+        goals2: [
+            {name: "Pepe", minute: 55}
+        ]
+    },
+    match51 : {
+        goals1: [], 
+        goals2: [
+            {name: "Artem Dzyuba", minute: 41}
+        ]
+    },
+    match52 : {
+        goals1: [
+            {name: "Mario Mandzukic", minute: 4}], 
+        goals2: [
+            {name: "Mathias Jørgensen", minute: 1}
         ]
     }
 };
