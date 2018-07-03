@@ -403,9 +403,28 @@ let matches = {
     },
     match52 : {
         goals1: [
-            {name: "Mario Mandzukic", minute: 4}], 
+            {name: "Mario Mandzukic", minute: 4}
+        ], 
         goals2: [
             {name: "Mathias Jørgensen", minute: 1}
+        ]
+    },
+    match53 : {
+        goals1: [
+            {name: "Neymar", minute: 51},
+            {name: "Roberto Firmino", minute: 88}
+        ], 
+        goals2: []
+    },
+    match54 : {
+        goals1: [
+            {name: "Jan Vertonghen", minute: 69},
+            {name: "Marouane Fellaini", minute: 74},
+            {name: "Nacer Chadli", minute: 90},
+        ], 
+        goals2: [
+            {name: "Genki Haraguchi", minute: 48},
+            {name: "Takashi Inui", minute: 52}
         ]
     }
 };

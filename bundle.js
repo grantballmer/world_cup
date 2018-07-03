@@ -5056,9 +5056,28 @@ let matches = {
     },
     match52 : {
         goals1: [
-            {name: "Mario Mandzukic", minute: 4}], 
+            {name: "Mario Mandzukic", minute: 4}
+        ], 
         goals2: [
             {name: "Mathias Jørgensen", minute: 1}
+        ]
+    },
+    match53 : {
+        goals1: [
+            {name: "Neymar", minute: 51},
+            {name: "Roberto Firmino", minute: 88}
+        ], 
+        goals2: []
+    },
+    match54 : {
+        goals1: [
+            {name: "Jan Vertonghen", minute: 69},
+            {name: "Marouane Fellaini", minute: 74},
+            {name: "Nacer Chadli", minute: 90},
+        ], 
+        goals2: [
+            {name: "Genki Haraguchi", minute: 48},
+            {name: "Takashi Inui", minute: 52}
         ]
     }
 };
@@ -5508,8 +5527,8 @@ const match52 = new Match(52, '2018-07-01', '21:00', 'Croatia', 'Denmark', '1(3)
 const matchDay17 = [match51, match52];
 
 //Matchday 18
-const match53 = new Match(53, '2018-07-02', '18:00', 'Brazil', 'Mexico', null, null, 'Samara Arena', 'Samara', 'UTC+4', null);
-const match54 = new Match(54, '2018-07-02', '21:00', 'Belgium', 'Japan', null, null, 'Rostov Arena', 'Moscow', 'UTC+3', null);
+const match53 = new Match(53, '2018-07-02', '18:00', 'Brazil', 'Mexico', 2, 0, 'Samara Arena', 'Samara', 'UTC+4', "kYIf8I1dvdo", goals.match53.goals1, goals.match53.goals2);
+const match54 = new Match(54, '2018-07-02', '21:00', 'Belgium', 'Japan', 3, 2, 'Rostov Arena', 'Moscow', 'UTC+3', "fJeJuc27ggE", goals.match54.goals1, goals.match54.goals2);
 
 const matchDay18 = [match53, match54];
 
@@ -5521,7 +5540,7 @@ const matchDay19 = [match55, match56];
 
 //Matchday 20
 const match57 = new Match(57, '2018-07-06', '17:00', "Uruguay", "France", null, null, 'Nizhny Novgorod Stadium', 'Nizhny Novgorod', 'UTC+3', null);
-const match58 = new Match(58, '2018-07-06', '21:00', null, null, null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
+const match58 = new Match(58, '2018-07-06', '21:00', "Brazil", "Belgium", null, null, 'Kazan Arena', 'Kazan', 'UTC+3', null);
 
 const matchDay20 = [match57, match58];
 
