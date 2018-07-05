@@ -426,7 +426,22 @@ let matches = {
             {name: "Genki Haraguchi", minute: 48},
             {name: "Takashi Inui", minute: 52}
         ]
+    },
+    match55 : {
+        goals1: [
+            {name: "Emil Forsberg", minute: 66}
+        ], 
+        goals2: []
+    },
+    match56 : {
+        goals1: [
+            {name: "Yerry Mina", minute: 90}
+        ], 
+        goals2: [
+            {name: "Harry Kane", minute: 57}
+        ]
     }
+    
 };
 
 module.exports.matches = matches;
